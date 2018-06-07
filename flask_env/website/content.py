@@ -1,7 +1,6 @@
 from flask import Markup
 
 about = Markup("""
-        <h1>- About<span id="white">.</span></h1>
         <p>
             my name is Yohann, I use to be an animator, I've on sevral project 
             like <span id="different">"Iron man", "The little Prince", "Garfield"</span>
@@ -28,27 +27,10 @@ about = Markup("""
         
          """)
 
-work = Markup("""  
-        <h1>- Work<span id="white">.</span></h1>
-        </br>
-        I am wokrign foe Fix studio right now
-        What I do</br>
-        ---------</br>
-        Front</br>
-        almost none, little Css, Html </br>
-        
-        Back-End</br>
-        ---------</br>
-        Python <3</br>
-        Flask, not falsk expert tho <3 </br>
-        
-       """)
 
-contact = Markup("""
-                    <h1>- Contact<span id="white">.</span></h1> if you feel like contacting me you can do so @ yoyo.mepa(a)gmail.com
-                    
-                    """)
+
 rand_name = ['Mamadou', 'La Grenouille', 'Mon Chelly']
+
 
 ### inspiration
 ## https://kentatoshikura.com/

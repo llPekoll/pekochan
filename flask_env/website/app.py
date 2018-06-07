@@ -11,9 +11,7 @@ def index(name=None):
     rand_nb = randint(0, len(ct.rand_name)-1)
     return render_template('index.html', name=name,
                            rand=ct.rand_name[rand_nb],
-                           about=ct.about,
-                           work=ct.work,
-                           contact=ct.contact), 200
+                           about=ct.about), 200
 
 
 app.run(port=5000, debug=True)
