@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Yohann Mepa</title>
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='main.css') }}">
+        
+    </head>
+    <body>
+        <div id="ctnr">
+                <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+                <script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r71/three.min.js'></script>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+                <div id ='three'>
+                        <script type="text/javascript" src="{{ url_for('static', filename='bg.js') }}"></script>
+                </div>
+            <div class='top'>
+                <ul id="menu">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#work">Work</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>  
+                <div id="title"  >
+                    {% if name %}
+                    <h1>Hello<span id="white">,</span> {{ name }}<span id="white">.</span></h1>
+                    {% else %}
+                    <h1>Hello<span id="white">,</span> {{rand}}<span id="white">.</span></h1>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="core">
+                <div id='about'>
+                    
+                        {{about}}
+                </div>
+                <div id='work'>
+                    {{work}}
+                </div>
+                <div id='contact'>
+                    {{contact}}
+                </div>
+                <!-- <script type="text/javascript" src="{{ url_for('static', filename='three.js') }}"></script> -->
+
+            </div>
+        </div>
+    </body>
+</html>
