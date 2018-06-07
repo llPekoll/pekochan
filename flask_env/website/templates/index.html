@@ -6,6 +6,9 @@
     </head>
     <body>
         <div id="ctnr">
+                <script type="text/javascript">
+                    init({{"{{ url_for('static', filename='model_mesh.obj') }}"}});
+                </script>
                 <script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r71/three.min.js'></script>
                 <div id ='three'>
                     <script type="text/javascript" src="{{ url_for('static', filename='bg.js') }}"></script>

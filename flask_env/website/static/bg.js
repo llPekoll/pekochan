@@ -12,6 +12,23 @@ var material = new THREE.MeshPhongMaterial( {
     color: Math.random() * 0xff00000 - 0xff00000,
     shading: THREE.FlatShading } 
 );
+
+function init(data) {
+    console.log(data);
+}
+var loader = new THREE.OBJLoader();
+loader.load(
+	data,
+	function ( object ) {
+		scene.add( object );
+	},
+	function ( xhr ) {
+		console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
+	},
+	function ( error ) {
+		console.log( 'An error happened' );
+	}
+);
 var cube = new THREE.Mesh( geometry, material );
 scene.add( cube );
 scene.background = new THREE.Color( 0x6d6d7479 );
