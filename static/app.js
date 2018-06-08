@@ -14,8 +14,6 @@ var material = new THREE.MeshPhongMaterial( {
 );
 
 
-var cube = new THREE.Mesh( geometry, material );
-scene.add( cube );
 
 light = new THREE.PointLight(0xffffff, 1, 4000);
 light.position.set(5, 0, 0);
@@ -53,9 +51,8 @@ function animate()
         if (camera.position.y > 1 ) {
             camera.position.y = 1
         }
-        
-        console.log('camera x',camera.position.x);
-        console.log('camera y', camera.position.y);
+        // console.log('camera x',camera.position.x);
+        // console.log('camera y', camera.position.y);
         camera.lookAt(scene.position);
     };
     

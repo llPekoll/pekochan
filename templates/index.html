@@ -13,16 +13,48 @@
         <script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r71/three.min.js'></script>
         <div id='three'>
 
-            <script type="text/javascript" src="https://threejs.org/examples/js/loaders/ColladaLoader.js"></script>
             <script type="text/javascript" src="{{ url_for('static', filename='app.js') }}"></script>
             <script> 
-            var loader = new THREE.ColladaLoader( loadingManager );
-                        loader.load( "{{ url_for('static', filename='mesh.dae') }}", function ( collada ) {
-                            elf = collada.scene;
-                        } );
-            var loadingManager = new THREE.LoadingManager( function() {
-                                scene.add( elf );
-                        } );
+
+var loader = new THREE.ObjectLoader();
+
+// var texture = new THREE.TextureLoader().load( '{{ url_for('static', filename='model_texture.jpg') }}' );
+
+// immediately use the texture for material creation
+var material = new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture("{{ url_for('static', filename='model_texture.jpg') }}") } );
+
+loader.load(
+	// resource URL
+	"{{ url_for('static', filename='scene.json') }}",
+
+	// onLoad callback
+	// Here the loaded data is assumed to be an object
+	function ( obj ) {
+		// Add the loaded object to the scene
+		scene.add( obj );
+        obj.scale.set(10,10,10);
+        obj.traverse( function ( child ) {
+
+if ( child instanceof THREE.Mesh ) {
+
+    child.material = material;
+
+}
+
+} );
+	},
+
+	// onProgress callback
+	function ( xhr ) {
+		console.log( (xhr.loaded / xhr.total * 100) + '% loaded' );
+	},
+
+	// onError callback
+	function ( err ) {
+		console.error( 'An error happened' );
+	}
+);
+
             </script>
         </div>
         <div class='top'>
