@@ -1,10 +1,14 @@
 from flask import Markup
+from datetime import datetime
+
+years= ''
+month= ''
 
 about = Markup("""
         <p>
             my name is Yohann, 
             <span id="small">I use to do some 2d/3d animation </span>
-            now recicled in <span id="different">Python Development</span> for (from data import data) %s years and %smonth now,
+            now recicled in <span id="different">Python Development</span> for %s years and %smonth now,
         </p>
         <p>
             I use to some Vr, Unity/Unreal stuff, University Lecturer
@@ -15,9 +19,7 @@ about = Markup("""
             Python Developen / R&D Engenier
 
             you still can =>cantact me <=
-        </p>
-        
-        """)
+        </p>"""), % (years, months)
 
 rand_name = ['Mamadou', 'La Grenouille', 'Mon Chelly']
 
@@ -36,6 +38,6 @@ rand_name = ['Mamadou', 'La Grenouille', 'Mon Chelly']
 ## http://animejs.com/
 ## http://mojs.io/
 ## http://three.js/
- 
+
 # # host
 #  https://www.pythonanywhere.com/forums/topic/1496/
