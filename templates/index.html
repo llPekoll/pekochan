@@ -3,7 +3,15 @@
 
 <head>
     <title>Yohann Mepa</title>
+    
     <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='main.css') }}">
+    {% if css == 1 %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='highlightPink.css') }}">
+    {% elif css == 2 %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='highlightOrange.css') }}">
+    {% elif css == 3 %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='highlightGreen.css') }}">
+    {% endif %} 
 </head>
 
 <body>
@@ -15,61 +23,61 @@
 
             <script type="text/javascript" src="{{ url_for('static', filename='app.js') }}"></script>
             <script> 
+                var loader = new THREE.ObjectLoader();
+                var material = new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture("{{ url_for('static', filename='model_texture.jpg') }}") } );
 
-var loader = new THREE.ObjectLoader();
-
-// var texture = new THREE.TextureLoader().load( '{{ url_for('static', filename='model_texture.jpg') }}' );
-
-// immediately use the texture for material creation
-var material = new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture("{{ url_for('static', filename='model_texture.jpg') }}") } );
-
-loader.load(
-	// resource URL
-	"{{ url_for('static', filename='scene.json') }}",
-
-	// onLoad callback
-	// Here the loaded data is assumed to be an object
-	function ( obj ) {
-		// Add the loaded object to the scene
-		scene.add( obj );
-        obj.scale.set(10,10,10);
-        obj.traverse( function ( child ) {
-
-if ( child instanceof THREE.Mesh ) {
-
-    child.material = material;
-
-}
-
-} );
-	},
-
-	// onProgress callback
-	function ( xhr ) {
-		console.log( (xhr.loaded / xhr.total * 100) + '% loaded' );
-	},
-
-	// onError callback
-	function ( err ) {
-		console.error( 'An error happened' );
-	}
-);
-
+                loader.load("{{ url_for('static', filename='scene_low.json') }}",
+                    function ( obj ) {
+                        scene.add( obj );
+                        obj.scale.set(10,10,10);
+                        obj.traverse( function ( child ) {
+                        if ( child instanceof THREE.Mesh ) 
+                        {
+                            child.material = material;
+                        }
+                        } );
+                    },
+                    function ( xhr ) {
+                        console.log( (xhr.loaded / xhr.total * 100) + '% loaded' );
+                    },
+                    function ( err ) {
+                        console.error( 'An error happened' );
+                }
+            );
             </script>
         </div>
         <div class='top'>
             <div id="title">
                 {% if name %}
-                <h1>Hello
-                    <span id="white">,</span> {{ name }}
+                <h1> <span id="white">Hello,</span> 
+                        {{ name }}
                     <span id="white">.</span>
                 </h1>
                 {% else %}
-                <h1>Hello
-                    <span id="white">,</span> {{rand}}
+                <h1> <span id="white">Hello,</span> 
+                        {{rand}}
                     <span id="white">.</span>
                 </h1>
-                {% endif %} {{about}}
+                {% endif %} 
+                {{about}}
+            </div>
+            <div>
+                <ul class="social-media-list">
+                    {% if css == 1 %}
+                    <li><a href="https://www.linkedin.com/in/yohann-mepa-69015073/"><img src="{{ url_for('static', filename='datas/Pin.png') }}" alt="LinkedIn" title="LinkedIn"></a></li>
+                    <li><a href="https://github.com/llPekoll/website"><img src="{{ url_for('static', filename='datas/Pgit.png') }}" alt="GitHub" title="GitHub"></a></li>
+                    <li><a href="{{ url_for('static', filename='datas/cv.pdf.png') }}"><img src="{{ url_for('static', filename='datas/Pcv.png') }}" alt="CV" title="CV"></a></li>
+                
+                    {% elif css == 2 %}
+                    <li><a href="https://www.linkedin.com/in/yohann-mepa-69015073/"><img src="{{ url_for('static', filename='datas/Oin.png') }}" alt="LinkedIn" title="LinkedIn"></a></li>
+                    <li><a href="https://github.com/llPekoll/website"><img src="{{ url_for('static', filename='datas/Ogit.png') }}" alt="GitHub" title="GitHub"></a></li>
+                    <li><a href="{{ url_for('static', filename='datas/cv.pdf.png') }}"><img src="{{ url_for('static', filename='datas/Ocv.png') }}" alt="CV" title="CV"></a></li>
+                    {% elif css == 3 %}
+                    <li><a href="https://www.linkedin.com/in/yohann-mepa-69015073/"><img src="{{ url_for('static', filename='datas/Gin.png') }}" alt="LinkedIn" title="LinkedIn"></a></li>
+                    <li><a href="https://github.com/llPekoll/website"><img src="{{ url_for('static', filename='datas/Ggit.png') }}" alt="GitHub" title="GitHub"></a></li>
+                    <li><a href="{{ url_for('static', filename='datas/cv.pdf.png') }}"><img src="{{ url_for('static', filename='datas/Gcv.png') }}" alt="CV" title="CV"></a></li>
+                
+                </ul>
             </div>
         </div>
     </div>

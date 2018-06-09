@@ -1,0 +1,84 @@
+@font-face{
+    font-family: Leitura;
+    src: url('Leitura_News_Italic_4.otf');
+    font-weight: bold;
+}
+body {
+  font-family: Leitura,Georgia,Cambria,"Times New Roman",Times,serif;
+  font-size: 1.5em;
+  margin: 0;
+
+  color: whitesmoke;
+  -webkit-font-smoothing: antialiased;
+  height: 100%;
+}
+#small{
+  font-size: 0.6em;
+  
+}
+html {
+  min-height: 100%;
+  background:
+      radial-gradient(rgb(53, 50, 43), black);
+  background-size: cover;
+}
+canvas {
+  width: 100%;
+  height: 100%;
+
+}
+
+#ctnr {
+  position: relative;
+  
+}
+
+#title {
+  margin-top: 150px;
+  margin-left: 8%;
+  margin-right: 8%;
+  font-size: 1em;
+  -webkit-font-smoothing: antialiased;
+}
+
+#three {
+  z-index: -1;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  height:  100%;
+}
+
+
+p {
+    text-indent: 50px;
+    margin-top:-12px;
+} 
+
+#white
+{
+    color: whitesmoke;  
+}
+
+ul.social-media-list img {
+  padding: 5px;
+  border-radius: 5px;
+  width: 56px;
+  height: 56px;
+}
+
+ul.social-media-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul.social-media-list li {
+  display: inline-block;
+}
+
+.social-media-list{
+  left: 80%;
+  top: 85%;
+  position: fixed;
+}

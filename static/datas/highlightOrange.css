@@ -1,0 +1,25 @@
+
+a:link {
+  color: #ed145b;
+}
+a:visited {
+  color: #8a0b35;
+}
+a:hover {
+  color: #8a0b35;
+}
+a:active {
+  color: #ed145b;
+}
+h1
+{
+    /* color:     rgba(36,255,200,.97); */
+    font-size: 2em;
+    color: #eda814;
+    font-family: Leitura,Georgia,Cambria,"Times New Roman",Times,serif;
+}
+
+#different
+{
+    color: #edc514;  
+}
