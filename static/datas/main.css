@@ -1,8 +1,4 @@
-@font-face{
-    font-family: Leitura;
-    src: url('datas/Leitura_News_Italic_4.otf');
-    font-weight: bold;
-}
+
 body {
   font-family: Leitura,Georgia,Cambria,"Times New Roman",Times,serif;
   font-size: 1.5em;

@@ -4,13 +4,12 @@
 <head>
     <title>Yohann Mepa</title>
     <style>
-    @font-face{
-        font-family: Leitura;
-        src: url('{{ url_for('static',filename='datas/Leitura_News_Italic_4.otf') }}');
-        font-weight: bold;
-    }
+        @font-face{
+            font-family: Leitura;
+            src: url('{{ url_for('static',filename='datas/Leitura_News_Italic_4.otf') }}');
+            font-weight: bold;
+        }
     </style>
-
     <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='datas/main.css') }}">
     {% if css == 1 %}
     <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='datas/highlightPink.css') }}">
@@ -23,28 +22,35 @@
 
 <body>
     <div id="ctnr">
-        <script type="text/javascript">
-        </script>
         <script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r71/three.min.js'></script>
+        
+        <!-- <script type="text/javascript" src="https://threejs.org/examples/js/shaders/CopyShader.js"></script>
+        <script type="text/javascript" src="https://threejs.org/examples/js/shaders/DigitalGlitch.js"></script>
+        
+		<script type="text/javascript" src="https://threejs.org/examples/js/postprocessing/EffectComposer.js"></script>
+		<script type="text/javascript" src="https://threejs.org/examples/js/postprocessing/RenderPass.js"></script>
+		<script type="text/javascript" src="https://threejs.org/examples/js/postprocessing/MaskPass.js"></script>
+		<script type="text/javascript" src="https://threejs.org/examples/js/postprocessing/ShaderPass.js"></script>
+        <script type="text/javascript" src="https://threejs.org/examples/js/postprocessing/GlitchPass.js"></script> -->
+        
         <div id='three'>
-                <script> 
-                        var peko = "{{ url_for('static', filename='datas/scene_low.json') }}"
-                        var tex = "{{ url_for('static', filename='datas/model_texture.jpg') }}"
-                        
-                    </script>
-            <script type="text/javascript" src="{{ url_for('static', filename='app.js') }}"></script>
-           
+            <script> 
+                var peko = "{{ url_for('static', filename='datas/scene_low.json') }}"
+                var tex = "{{ url_for('static', filename='datas/model_texture.jpg') }}"
+            </script>
         </div>
         <div class='top'>
             <div id="title">
                 {% if name %}
-                <h1> <span id="white">Hello,</span> 
-                        {{ name }}
+                <h1> 
+                    <span id="white">Hello,</span> 
+                    {{ name }}
                     <span id="white">.</span>
                 </h1>
                 {% else %}
-                <h1> <span id="white">Hello,</span> 
-                        {{rand}}
+                <h1> 
+                    <span id="white">Hello,</span> 
+                    {{rand}}
                     <span id="white">.</span>
                 </h1>
                 {% endif %} 
@@ -53,21 +59,30 @@
             <div>
                 <ul class="social-media-list">
                     {% if css == 1 %}
-                    <li><a href="https://www.linkedin.com/in/yohann-mepa-69015073/"><img src="{{ url_for('static', filename='datas/Pin.png') }}" alt="LinkedIn" title="LinkedIn"></a></li>
-                    <li><a href="https://github.com/llPekoll/website"><img src="{{ url_for('static', filename='datas/Pgit.png') }}" alt="GitHub" title="GitHub"></a></li>
-                    <li><a href="{{ url_for('static', filename='datas/cv.pdf.png') }}"><img src="{{ url_for('static', filename='datas/Pcv.png') }}" alt="CV" title="CV"></a></li>
-                
+                    <li><a href="https://www.linkedin.com/in/yohann-mepa-69015073/">
+                        <img src="{{ url_for('static', filename='datas/Pin.png') }}" alt="LinkedIn" title="LinkedIn"></a></li>
+                    <li><a href="https://github.com/llPekoll/website">
+                        <img src="{{ url_for('static', filename='datas/Pgit.png') }}" alt="GitHub" title="GitHub"></a></li>
+                    <li><a href="{{ url_for('static', filename='datas/cv.pdf.png') }}">
+                        <img src="{{ url_for('static', filename='datas/Pcv.png') }}" alt="CV" title="CV"></a></li>
                     {% elif css == 2 %}
-                    <li><a href="https://www.linkedin.com/in/yohann-mepa-69015073/"><img src="{{ url_for('static', filename='datas/Oin.png') }}" alt="LinkedIn" title="LinkedIn"></a></li>
-                    <li><a href="https://github.com/llPekoll/website"><img src="{{ url_for('static', filename='datas/Ogit.png') }}" alt="GitHub" title="GitHub"></a></li>
-                    <li><a href="{{ url_for('static', filename='datas/cv.pdf.png') }}"><img src="{{ url_for('static', filename='datas/Ocv.png') }}" alt="CV" title="CV"></a></li>
+                    <li><a href="https://www.linkedin.com/in/yohann-mepa-69015073/">
+                        <img src="{{ url_for('static', filename='datas/Oin.png') }}" alt="LinkedIn" title="LinkedIn"></a></li>
+                    <li><a href="https://github.com/llPekoll/website">
+                        <img src="{{ url_for('static', filename='datas/Ogit.png') }}" alt="GitHub" title="GitHub"></a></li>
+                    <li><a href="{{ url_for('static', filename='datas/cv.pdf.png') }}">
+                        <img src="{{ url_for('static', filename='datas/Ocv.png') }}" alt="CV" title="CV"></a></li>
                     {% elif css == 3 %}
-                    <li><a href="https://www.linkedin.com/in/yohann-mepa-69015073/"><img src="{{ url_for('static', filename='datas/Gin.png') }}" alt="LinkedIn" title="LinkedIn"></a></li>
-                    <li><a href="https://github.com/llPekoll/website"><img src="{{ url_for('static', filename='datas/Ggit.png') }}" alt="GitHub" title="GitHub"></a></li>
-                    <li><a href="{{ url_for('static', filename='datas/cv.pdf.png') }}"><img src="{{ url_for('static', filename='datas/Gcv.png') }}" alt="CV" title="CV"></a></li>
+                    <li><a href="https://www.linkedin.com/in/yohann-mepa-69015073/">
+                        <img src="{{ url_for('static', filename='datas/Gin.png') }}" alt="LinkedIn" title="LinkedIn"></a></li>
+                    <li><a href="https://github.com/llPekoll/website">
+                        <img src="{{ url_for('static', filename='datas/Ggit.png') }}" alt="GitHub" title="GitHub"></a></li>
+                    <li><a href="{{ url_for('static', filename='datas/Yohann_MEPA_cv.pdf') }}">
+                        <img src="{{ url_for('static', filename='datas/Gcv.png') }}" alt="CV" title="CV"></a></li>
                     {% endif %} 
                 </ul>
             </div>
+            <script type="text/javascript" src="{{ url_for('static', filename='app.js') }}"></script>
         </div>
     </div>
 </body>

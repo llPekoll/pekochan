@@ -6,7 +6,7 @@ one block website
 let's try to make it simple
 
 TODO:
-^^^^^
+=====
     - setup css for different days
     - make the name editable in the page
 
