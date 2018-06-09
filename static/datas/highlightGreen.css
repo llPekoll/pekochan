@@ -1,15 +1,15 @@
 
 a:link {
-  color: #ed145b;
+  color: #38ed14;
 }
 a:visited {
-  color: #8a0b35;
+  color: #36da16;
 }
 a:hover {
-  color: #8a0b35;
+  color: #20800d;
 }
 a:active {
-  color: #ed145b;
+  color: #36da16;
 }
 h1
 {
@@ -18,7 +18,7 @@ h1
     font-family: Leitura,Georgia,Cambria,"Times New Roman",Times,serif;
 }
 
-#differents
+#different
 {
-    color: #10b160;  
+    color: #38ed14;  
 }

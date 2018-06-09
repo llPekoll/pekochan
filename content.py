@@ -26,7 +26,6 @@ about = Markup("""
             <span id="small">for <span id="different">%s</span> years and <span id="different">%s</span> months now.
         </span>
         </p>
-        
             I used to some do AR/VR, Unity/Unreal stuff, Lecture at University,
         <p>
             <span id="small">Also, I won 
@@ -35,8 +34,7 @@ about = Markup("""
                 <span id="different">Annecy Festival</span>.
             </span>
         </p> 
-        
-            Now Working <span id="different">Python Dev /R&D Engenier</span>
+            Now Working <span id="different">Python Dev /R&D Engenier</span> at
             <a href="https://www.fixstudio.com">Fixstudio</a> 
         <p>
             <span id="small">and working for <span id="different">Addsome</span> (Python/Unity Dev), <span id="different"><a href="https://www.augment.com">Augment</a></span>(Python/ R&D Dev) before</span>

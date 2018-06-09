@@ -3,14 +3,21 @@
 
 <head>
     <title>Yohann Mepa</title>
-    
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='main.css') }}">
+    <style>
+    @font-face{
+        font-family: Leitura;
+        src: url('{{ url_for('static',filename='datas/Leitura_News_Italic_4.otf') }}');
+        font-weight: bold;
+    }
+    </style>
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='datas/main.css') }}">
     {% if css == 1 %}
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='highlightPink.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='datas/highlightPink.css') }}">
     {% elif css == 2 %}
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='highlightOrange.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='datas/highlightOrange.css') }}">
     {% elif css == 3 %}
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='highlightGreen.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='datas/highlightGreen.css') }}">
     {% endif %} 
 </head>
 
@@ -20,31 +27,13 @@
         </script>
         <script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r71/three.min.js'></script>
         <div id='three'>
-
+                <script> 
+                        var peko = "{{ url_for('static', filename='datas/scene_low.json') }}"
+                        var tex = "{{ url_for('static', filename='datas/model_texture.jpg') }}"
+                        
+                    </script>
             <script type="text/javascript" src="{{ url_for('static', filename='app.js') }}"></script>
-            <script> 
-                var loader = new THREE.ObjectLoader();
-                var material = new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture("{{ url_for('static', filename='model_texture.jpg') }}") } );
-
-                loader.load("{{ url_for('static', filename='scene_low.json') }}",
-                    function ( obj ) {
-                        scene.add( obj );
-                        obj.scale.set(10,10,10);
-                        obj.traverse( function ( child ) {
-                        if ( child instanceof THREE.Mesh ) 
-                        {
-                            child.material = material;
-                        }
-                        } );
-                    },
-                    function ( xhr ) {
-                        console.log( (xhr.loaded / xhr.total * 100) + '% loaded' );
-                    },
-                    function ( err ) {
-                        console.error( 'An error happened' );
-                }
-            );
-            </script>
+           
         </div>
         <div class='top'>
             <div id="title">
@@ -76,7 +65,7 @@
                     <li><a href="https://www.linkedin.com/in/yohann-mepa-69015073/"><img src="{{ url_for('static', filename='datas/Gin.png') }}" alt="LinkedIn" title="LinkedIn"></a></li>
                     <li><a href="https://github.com/llPekoll/website"><img src="{{ url_for('static', filename='datas/Ggit.png') }}" alt="GitHub" title="GitHub"></a></li>
                     <li><a href="{{ url_for('static', filename='datas/cv.pdf.png') }}"><img src="{{ url_for('static', filename='datas/Gcv.png') }}" alt="CV" title="CV"></a></li>
-                
+                    {% endif %} 
                 </ul>
             </div>
         </div>
