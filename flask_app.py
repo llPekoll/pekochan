@@ -14,6 +14,6 @@ def index(name=None):
                            css=ct.css), 200
 
 
-if __name__ == '__main__':
-    app.run()
-# app.run(port=5000, debug=True)
+# if __name__ == '__main__':
+    # app.run()
+app.run(port=5000, debug=True)

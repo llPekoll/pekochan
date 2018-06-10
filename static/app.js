@@ -16,16 +16,11 @@ light.position.set(40,100,200);
 scene.add(light);
 
 // MESHES
-
 var loader = new THREE.ObjectLoader();
 var texture = new THREE.TextureLoader().load( tex );
 var material = new THREE.MeshBasicMaterial( { map: texture } );
 
-var mat = new THREE.ShaderMaterial({
-    vertexShader:document.getElementById('vertexShader').textContent,
-    fragmentShader:document.getElementById('fragmentShader').textContent,
-    
-})
+
 
 loader.load(peko,
     function ( obj ) {
@@ -77,23 +72,36 @@ loader.load(wings,
     }
 );
 
+
 // postprocessing
 var composer = new THREE.EffectComposer( renderer );
-composer.addPass( new THREE.RenderPass( scene, camera ) );
+var renderPass = new THREE.RenderPass(scene, camera);
+composer.addPass( renderPass );
 
 var effect = new THREE.ShaderPass( THREE.DotScreenShader );
 effect.uniforms[ 'scale' ].value = 5;
 composer.addPass( effect );
 var effect = new THREE.ShaderPass( THREE.RGBShiftShader );
 effect.uniforms[ 'amount' ].value = 0.000015;
+composer.addPass( effect );
 effect.renderToScreen = true;
 composer.addPass( effect );
 
-var bloomPass = new THREE.UnrealBloomPass( new THREE.Vector2( window.innerWidth, window.innerHeight ), 1.5/2, 0.4, 0.87 ); //1.0, 9, 0.5, 512);
-bloomPass.renderToScreen = true;
-composer.addPass( effect );
-composer.addPass( bloomPass );
 
+// var pass1 = new THREE.UnrealBloomPass( new THREE.Vector2( window.innerWidth, window.innerHeight ), 1.5/2, 0.4, 0.87 );
+// composer.addPass( pass1 );
+// pass1.renderToScreen = true;
+
+// var pass1 = new THREE.ShaderPass( THREE.SepiaShader ); //1.0, 9, 0.5, 512);
+// composer.addPass( pass1 );
+// pass1.renderToScreen = true;
+
+var pass2 = new THREE.GlitchPass( 100 );
+composer.addPass( pass2 );
+pass2.renderToScreen = true;
+
+
+render();
 function onDocumentMouseMove( event ) {
     var mouseX = event.clientX -  window.innerWidth/2;
     var mouseY = event.clientY - window.innerHeight/2;
@@ -107,4 +115,3 @@ function render() {
     renderer.render( scene, camera );
     composer.render()
 }
-render();

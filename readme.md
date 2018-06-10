@@ -27,23 +27,27 @@ just cd mysite && git pull will be much better
 
 
 ### inspiration
-## https://kentatoshikura.com/
-## http://findmatthew.com/
-## https://pierre.io/
-## http://www.michaelvillar.com/
-## https://optimo.com/
-## http://slyillustrations.com/
-## https://www.eliwilliamson.com/
-## http://www.drama.xxx/
+===============
+https://kentatoshikura.com/
+http://findmatthew.com/
+https://pierre.io/
+http://www.michaelvillar.com/
+https://optimo.com/
+http://slyillustrations.com/
+https://www.eliwilliamson.com/
+http://www.drama.xxx/
+http://www.larsberg.net/#/thumpThump
 
-## lib 
-## http://animejs.com/
-## http://mojs.io/
-## http://three.js/
-## http://pixi.js
+lib 
+====
+http://animejs.com/
+http://mojs.io/
+http://three.js/
+http://pixi.js
 
-## host
-#  https://www.pythonanywhere.com/forums/topic/1496/
+host
+====
+https://www.pythonanywhere.com/forums/topic/1496/
 
 
-# https://codemyui.com/tag/social-icon/
+https://codemyui.com/tag/social-icon/

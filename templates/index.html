@@ -23,19 +23,6 @@
 <body>
     <div id="ctnr">        
         <canvas id='three'>
-            <script type="x-shader/x-vertex" id="vertexShader">
-                void main()
-                {
-                    vec4 modelViewPostion =modelViewMatrix * vec4(position,1.0);
-                    gl_Position = projectionMatrix * modelViewPosition;
-                }
-            </script>
-            <script type="x-shader/x-fragment" id ="fragmentShader">
-                void main()
-                {
-                    gl_FragColor = vec4(1.0,0.0,0.0, 1.0);
-                }
-            </script>
             <script> 
                 var peko = "{{ url_for('static', filename='datas/peko.json') }}"
                 var tex = "{{ url_for('static', filename='datas/text_low.jpg') }}"
@@ -87,15 +74,23 @@
                 </ul>
             </div>
             <script type="text/javascript" src='{{ url_for('static',filename='js/three.min.js') }}'></script>
+            <script type="text/javascript" src='{{ url_for('static',filename='js/EffectComposer.js') }}'></script>
+            <script type="text/javascript" src='{{ url_for('static',filename='js/CopyShader.js') }}'></script>
+            <script type="text/javascript" src='{{ url_for('static',filename='js/RenderPass.js') }}'></script>
+            <script type="text/javascript" src='{{ url_for('static',filename='js/ShaderPass.js') }}'></script>
+            <script type="text/javascript" src='{{ url_for('static',filename='js/DigitalGlitch.js') }}'></script>
+            <script type="text/javascript" src='{{ url_for('static',filename='js/GlitchPass.js') }}'></script>
+            <script type="text/javascript" src='{{ url_for('static',filename='js/VignetteShader.js') }}'></script>
+            <script  type="text/javascript" src='{{ url_for('static',filename='js/HorizontalBlurShader.js') }}'></script>
+            <script type="text/javascript" src='{{ url_for('static',filename='js/MaskPass.js') }}'></script>
+            <script  type="text/javascript" src='{{ url_for('static',filename='js/VerticalBlurShader.js') }}'></script>
+            <script type="text/javascript" src='{{ url_for('static',filename='js/SepiaShader.js') }}'></script>
+
             <script type="text/javascript" src='{{ url_for('static',filename='js/Detector.js') }}'></script>
             
-            <script type="text/javascript" src='{{ url_for('static',filename='js/CopyShader.js') }}'></script>
             <script type="text/javascript" src='{{ url_for('static',filename='js/DotScreenShader.js') }}'></script>
             <script type="text/javascript" src='{{ url_for('static',filename='js/RGBShiftShader.js') }}'></script>
 
-            <script type="text/javascript" src='{{ url_for('static',filename='js/EffectComposer.js') }}'></script>
-            <script type="text/javascript" src='{{ url_for('static',filename='js/RenderPass.js') }}'></script>
-            <script type="text/javascript" src='{{ url_for('static',filename='js/ShaderPass.js') }}'></script>
             <script type="text/javascript" src='{{ url_for('static',filename='js/UnrealBloomPass.js') }}'></script>
             <script type="text/javascript" src='{{ url_for('static',filename='js/LuminosityHighPassShader.js') }}'></script>
             
