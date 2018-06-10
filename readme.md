@@ -15,7 +15,6 @@ paperplane.io
 https://www.pythonanywhere.com/pricing/
 
 
-Put a link to my cv, and linkedin on top right corner
 top left corner put JS experiences too
 /smile
 /3dofme
@@ -23,8 +22,8 @@ top left corner put JS experiences too
 /bronw nad stuff
 
 update website!
-rm -rf mysite && git clone https://github.com/llPekoll/website && mv website mysite
-
+//rm -rf mysite && git clone https://github.com/llPekoll/website && mv website mysite
+just cd mysite && git pull will be much better
 
 
 ### inspiration
