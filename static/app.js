@@ -7,16 +7,25 @@ var camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHe
 camera.position.set(1, 1, 800);
 var mouse = new THREE.Vector2();
 
-var loader = new THREE.ObjectLoader();
-var texture = new THREE.TextureLoader().load( tex );
-var material = new THREE.MeshBasicMaterial( { map: texture } );
-var light = new THREE.AmbientLight( 0x404040 ); // soft white light
+// LIGHTS
+
+var light = new THREE.AmbientLight( 0x404040 );
 scene.add( light );
-
-
 var light = new THREE.PointLight(0x111100, 400, 700);
 light.position.set(40,100,200);
 scene.add(light);
+
+// MESHES
+
+var loader = new THREE.ObjectLoader();
+var texture = new THREE.TextureLoader().load( tex );
+var material = new THREE.MeshBasicMaterial( { map: texture } );
+
+var mat = new THREE.ShaderMaterial({
+    vertexShader:document.getElementById('vertexShader').textContent,
+    fragmentShader:document.getElementById('fragmentShader').textContent,
+    
+})
 
 loader.load(peko,
     function ( obj ) {
@@ -52,18 +61,14 @@ loader.load(crown,
     }
 );
 
-
-var loader = new THREE.ObjectLoader();
-
 loader.load(wings,
     function ( wings ) {
-        wings.material = new THREE.MeshBasicMaterial(  { color: 0xffff00 });
-
+        wings.material = new THREE.MeshBasicMaterial(  { color: 0xffff00, side: THREE.DoubleSide });
         wings.scale.set(250,250,250);
         wings.position.set(0,-170,-40);
         wings.position.y -= 80;
         scene.add( wings );
-         },
+        },
     function ( xhr ) {
         console.log( (xhr.loaded / xhr.total * 100) + '% loaded' );
     },
