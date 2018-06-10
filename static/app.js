@@ -1,26 +1,31 @@
 
-var container = document.getElementById('three');
-var mouse = new THREE.Vector2();
+var renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('three'), alpha: true, antialias: true });
+renderer.setSize( window.innerWidth,  window.innerHeight );
+document.addEventListener( 'mousemove', onDocumentMouseMove, false );
 var scene = new THREE.Scene();
-var camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
-var renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+var camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 0.1, 2000 );
+camera.position.set(1, 1, 800);
+var mouse = new THREE.Vector2();
 
 var loader = new THREE.ObjectLoader();
-var material = new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture(tex) } );
+var texture = new THREE.TextureLoader().load( tex );
+var material = new THREE.MeshBasicMaterial( { map: texture } );
+var light = new THREE.AmbientLight( 0x404040 ); // soft white light
+scene.add( light );
 
-var mouseX = 0, mouseY = 0;
-var windowHalfX = window.innerWidth / 2;
-var windowHalfY = window.innerHeight / 2;
+
+var light = new THREE.PointLight(0x111100, 400, 700);
+light.position.set(40,100,200);
+scene.add(light);
 
 loader.load(peko,
     function ( obj ) {
         scene.add( obj );
         obj.scale.set(1000,1000,1000);
+        obj.position.y -= 80;
         obj.traverse( function ( child ) {
         if ( child instanceof THREE.Mesh ) 
-        {
-            child.material = material;
-        }
+            {child.material = material;}
         } );
     },
     function ( xhr ) {
@@ -31,55 +36,70 @@ loader.load(peko,
     }
 );
 
-camera.position.set(1, 1, 500);
-renderer.setSize( window.innerWidth,  window.innerHeight );
+loader.load(crown,
+    function ( crown ) {
+        crown.material = new THREE.MeshPhongMaterial({color: 0xdddddd});
+        crown.scale.set(30,30,30);
+        crown.position.set(5,260,70);
+        crown.position.y -= 40;
+        scene.add( crown );
+    },
+    function ( xhr ) {
+        console.log( (xhr.loaded / xhr.total * 100) + '% loaded' );
+    },
+    function ( err ) {
+        console.error( 'An error happened' );
+    }
+);
 
-document.body.appendChild( container );
-document.addEventListener( 'mousemove', onDocumentMouseMove, false );
-// document.addEventListener('mousemove', onMouseMove, false);
-container.appendChild( renderer.domElement );
 
+var loader = new THREE.ObjectLoader();
 
+loader.load(wings,
+    function ( wings ) {
+        wings.material = new THREE.MeshBasicMaterial(  { color: 0xffff00 });
 
-// var composer = new THREE.EffectComposer( renderer );
-// composer.addPass( new THREE.RenderPass( scene, camera ) );
-// var glitchPass = new THREE.GlitchPass();
-// glitchPass.renderToScreen = true;
-// composer.addPass( glitchPass );
+        wings.scale.set(250,250,250);
+        wings.position.set(0,-170,-40);
+        wings.position.y -= 80;
+        scene.add( wings );
+         },
+    function ( xhr ) {
+        console.log( (xhr.loaded / xhr.total * 100) + '% loaded' );
+    },
+    function ( err ) {
+        console.error( 'An error happened' );
+    }
+);
 
-// glitchPass.goWild=container.checked;
+// postprocessing
+var composer = new THREE.EffectComposer( renderer );
+composer.addPass( new THREE.RenderPass( scene, camera ) );
+
+var effect = new THREE.ShaderPass( THREE.DotScreenShader );
+effect.uniforms[ 'scale' ].value = 5;
+composer.addPass( effect );
+var effect = new THREE.ShaderPass( THREE.RGBShiftShader );
+effect.uniforms[ 'amount' ].value = 0.000015;
+effect.renderToScreen = true;
+composer.addPass( effect );
+
+var bloomPass = new THREE.UnrealBloomPass( new THREE.Vector2( window.innerWidth, window.innerHeight ), 1.5/2, 0.4, 0.87 ); //1.0, 9, 0.5, 512);
+bloomPass.renderToScreen = true;
+composer.addPass( effect );
+composer.addPass( bloomPass );
 
 function onDocumentMouseMove( event ) {
-    mouseX = event.clientX - windowHalfX;
-    mouseY = event.clientY - windowHalfY;
+    var mouseX = event.clientX -  window.innerWidth/2;
+    var mouseY = event.clientY - window.innerHeight/2;
     camera.position.x += ( mouseX - camera.position.x ) * 0.036;
     camera.position.y += ( - (mouseY) - camera.position.y ) * 0.036;
     camera.lookAt( scene.position );    
 }
 
-function animate() {
-    requestAnimationFrame( animate );
+function render() {
+    requestAnimationFrame( render );
     renderer.render( scene, camera );
-
-    }
-
-//     function onMouseMove(event) {
-//     mouseX = event.clientX - window.innerWidth / 2;
-//     mouseY = event.clientY - window.innerHeight / 2;
-//     camera.position.x += (mouseX - camera.position.x) * 0.0003;
-//     camera.position.y += (mouseY - camera.position.y) * 0.0003;
-//     if (camera.position.x < -2) {
-//         camera.position.x = -2
-//     }
-//     if (camera.position.x > 2 ) {
-//         camera.position.x = 2
-//     }
-//     if (camera.position.y < -1) {
-//         camera.position.y = -1
-//     }
-//     if (camera.position.y > 1 ) {
-//         camera.position.y = 1
-//     }
-//     camera.lookAt(scene.position);
-// };    
-animate();
+    composer.render()
+}
+render();

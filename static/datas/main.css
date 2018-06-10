@@ -1,32 +1,24 @@
-
 body {
   font-family: Leitura,Georgia,Cambria,"Times New Roman",Times,serif;
   font-size: 1.5em;
   margin: 0;
-
   color: whitesmoke;
   -webkit-font-smoothing: antialiased;
   height: 100%;
 }
 #small{
   font-size: 0.6em;
-  
 }
+
 html {
   min-height: 100%;
   background:
-      radial-gradient(rgb(53, 50, 43), black);
+  radial-gradient(rgb(53, 50, 43), black);
   background-size: cover;
 }
 canvas {
   width: 100%;
   height: 100%;
-
-}
-
-#ctnr {
-  position: relative;
-  
 }
 
 #title {
@@ -45,15 +37,13 @@ canvas {
   height:  100%;
 }
 
-
 p {
-    text-indent: 50px;
-    margin-top:-12px;
+  text-indent: 50px;
+  margin-top:-12px;
 } 
 
-#white
-{
-    color: whitesmoke;  
+#white{
+  color: whitesmoke;  
 }
 
 ul.social-media-list img {

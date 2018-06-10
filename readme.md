@@ -7,7 +7,6 @@ let's try to make it simple
 
 TODO:
 =====
-    - setup css for different days
     - make the name editable in the page
 
 
@@ -22,3 +21,30 @@ top left corner put JS experiences too
 /3dofme
 /black
 /bronw nad stuff
+
+update website!
+rm -rf mysite && git clone https://github.com/llPekoll/website && mv website mysite
+
+
+
+### inspiration
+## https://kentatoshikura.com/
+## http://findmatthew.com/
+## https://pierre.io/
+## http://www.michaelvillar.com/
+## https://optimo.com/
+## http://slyillustrations.com/
+## https://www.eliwilliamson.com/
+## http://www.drama.xxx/
+
+## lib 
+## http://animejs.com/
+## http://mojs.io/
+## http://three.js/
+## http://pixi.js
+
+## host
+#  https://www.pythonanywhere.com/forums/topic/1496/
+
+
+# https://codemyui.com/tag/social-icon/

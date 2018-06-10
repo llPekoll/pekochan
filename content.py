@@ -26,9 +26,11 @@ about = Markup("""
             <span id="small">for <span id="different">%s</span> years and <span id="different">%s</span> months now.
         </span>
         </p>
-            I used to some do AR/VR, Unity/Unreal stuff, Lecture at University,
+            I used to some do AR/VR, Lecturer at University,
         <p>
-            <span id="small">Also, I won 
+            <span id="small">
+                    Unity/Unreal, Htc Vive, Hololens stuff,
+                     Also, I won 
                 <span id="different">Suzzane Award </span>
                     and special Selection to the
                 <span id="different">Annecy Festival</span>.
@@ -46,22 +48,3 @@ about = Markup("""
 
 rand_name = ['Mamadou', 'La Grenouille', 'Mon Chelly', 'Thomas']
 
-
-### inspiration
-## https://kentatoshikura.com/
-## http://findmatthew.com/
-## https://pierre.io/
-## http://www.michaelvillar.com/
-## https://optimo.com/
-## http://slyillustrations.com/
-## https://www.eliwilliamson.com/
-## http://www.drama.xxx/
-
-## lib 
-## http://animejs.com/
-## http://mojs.io/
-## http://three.js/
-## http://pixi.js
-
-# # host
-#  https://www.pythonanywhere.com/forums/topic/1496/
