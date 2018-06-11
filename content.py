@@ -12,10 +12,15 @@ total_year = int((years*12 + months)/12)
 total_month = (years*12 + months)%12
 
 css = 1
-if now.day % 3 == 0:
-    css = 3
-elif now.day % 2 == 0:
-    css = 2
+css = ['Gcv.png','Ggit.png','Gin.png']
+
+for i, cs in enumerate(css):
+    if now.day % 3 == 0:
+        cs[i] = cs.replace('G','O')
+    elif now.day % 2 == 0:
+        cs[i] = cs.replace('G','O')
+        
+
 about = Markup("""
             My name is <span id="different">Yohann</span>,
         <p >
