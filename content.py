@@ -11,9 +11,9 @@ months = now.month - pday.month
 total_year = int((years*12 + months)/12)
 total_month = (years*12 + months)%12
 
-css_dict = {'green':['green','Gcv.png','Ggit.png','Gin.png'],
-            'pink':['pink','Pcv.png','Pgit.png','Pin.png'],
-            'orange':['orange','Ocv.png','Ogit.png','Oin.png'],
+css_dict = {'green':['highlightGreen.css','Gcv.png','Ggit.png','Gin.png'],
+            'pink':['highlightPink.css','Pcv.png','Pgit.png','Pin.png'],
+            'orange':['highlightOrange.css','Ocv.png','Ogit.png','Oin.png'],
             }
 css =''
 if now.day % 3 == 0:

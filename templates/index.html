@@ -11,13 +11,7 @@
         }
     </style>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='datas/main.css') }}">
-    {% if css[0] == 'pink' %}
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='datas/highlightPink.css') }}">
-    {% elif css[0] == 'orange' %}
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='datas/highlightOrange.css') }}">
-    {% elif css[0] == 'green' %}
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='datas/highlightGreen.css') }}">
-    {% endif %} 
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='datas/') }}{{css[0]}}">
 </head>
 
 <body>
