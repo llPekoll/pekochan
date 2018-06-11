@@ -11,16 +11,17 @@ months = now.month - pday.month
 total_year = int((years*12 + months)/12)
 total_month = (years*12 + months)%12
 
-css = 1
-css = ['Gcv.png','Ggit.png','Gin.png']
-
-for i, cs in enumerate(css):
-    if now.day % 3 == 0:
-        cs[i] = cs.replace('G','O')
-    elif now.day % 2 == 0:
-        cs[i] = cs.replace('G','O')
-        
-
+css_dict = {'green':['green','Gcv.png','Ggit.png','Gin.png'],
+            'pink':['pink','Pcv.png','Pgit.png','Pin.png'],
+            'orange':['orange','Ocv.png','Ogit.png','Oin.png'],
+            }
+            
+if now.day % 3 == 0:
+    css = css_dict['green']
+    
+elif now.day % 2 == 0:
+    css = css_dict['pink']
+    
 about = Markup("""
             My name is <span id="different">Yohann</span>,
         <p >
