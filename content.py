@@ -15,12 +15,14 @@ css_dict = {'green':['green','Gcv.png','Ggit.png','Gin.png'],
             'pink':['pink','Pcv.png','Pgit.png','Pin.png'],
             'orange':['orange','Ocv.png','Ogit.png','Oin.png'],
             }
-            
+css =''
 if now.day % 3 == 0:
     css = css_dict['green']
     
 elif now.day % 2 == 0:
     css = css_dict['pink']
+else:
+    css = css_dict['orange']
     
 about = Markup("""
             My name is <span id="different">Yohann</span>,

@@ -22,11 +22,11 @@ top left corner put JS experiences too
 /bronw nad stuff
 
 update website!
-//rm -rf mysite && git clone https://github.com/llPekoll/website && mv website mysite
+rm -rf mysite && git clone https://github.com/llPekoll/website && mv website mysite
 just cd mysite && git pull will be much better
 
 
-### inspiration
+inspiration
 ===============
 https://kentatoshikura.com/
 http://findmatthew.com/

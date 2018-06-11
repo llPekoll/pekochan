@@ -11,11 +11,11 @@
         }
     </style>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='datas/main.css') }}">
-    {% if css == 1 %}
+    {% if css[0] == 'pink' %}
     <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='datas/highlightPink.css') }}">
-    {% elif css == 2 %}
+    {% elif css[0] == 'orange' %}
     <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='datas/highlightOrange.css') }}">
-    {% elif css == 3 %}
+    {% elif css[0] == 'green' %}
     <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='datas/highlightGreen.css') }}">
     {% endif %} 
 </head>
@@ -49,28 +49,12 @@
             </div>
             <div>
                 <ul class="social-media-list">
-                    {% if css == 1 %}
                     <li><a href="https://www.linkedin.com/in/yohann-mepa-69015073/">
-                        <img src="{{ url_for('static', filename='datas/Pin.png') }}" alt="LinkedIn" title="LinkedIn"></a></li>
+                        <img src="{{ url_for('static', filename='datas/') }}{{css[3]}}" alt="LinkedIn" title="LinkedIn"></a></li>
                     <li><a href="https://github.com/llPekoll/website">
-                        <img src="{{ url_for('static', filename='datas/Pgit.png') }}" alt="GitHub" title="GitHub"></a></li>
-                    <li><a href="{{ url_for('static', filename='datas/cv.pdf.png') }}">
-                        <img src="{{ url_for('static', filename='datas/Pcv.png') }}" alt="CV" title="CV"></a></li>
-                    {% elif css == 2 %}
-                    <li><a href="https://www.linkedin.com/in/yohann-mepa-69015073/">
-                        <img src="{{ url_for('static', filename='datas/Oin.png') }}" alt="LinkedIn" title="LinkedIn"></a></li>
-                    <li><a href="https://github.com/llPekoll/website">
-                        <img src="{{ url_for('static', filename='datas/Ogit.png') }}" alt="GitHub" title="GitHub"></a></li>
-                    <li><a href="{{ url_for('static', filename='datas/cv.pdf.png') }}">
-                        <img src="{{ url_for('static', filename='datas/Ocv.png') }}" alt="CV" title="CV"></a></li>
-                    {% elif css == 3 %}
-                    <li><a href="https://www.linkedin.com/in/yohann-mepa-69015073/">
-                        <img src="{{ url_for('static', filename='datas/Gin.png') }}" alt="LinkedIn" title="LinkedIn"></a></li>
-                    <li><a href="https://github.com/llPekoll/website">
-                        <img src="{{ url_for('static', filename='datas/Ggit.png') }}" alt="GitHub" title="GitHub"></a></li>
-                    <li><a href="{{ url_for('static', filename='datas/Yohann_MEPA_cv.pdf') }}">
-                        <img src="{{ url_for('static', filename='datas/Gcv.png') }}" alt="CV" title="CV"></a></li>
-                    {% endif %} 
+                        <img src="{{ url_for('static', filename='datas/') }}{{css[2]}}" alt="GitHub" title="GitHub"></a></li>
+                    <li><a href="{{ url_for('static', filename='datas/Yohann_MEPA_CV.pdf') }}">
+                        <img src="{{ url_for('static', filename='datas/') }}{{css[1]}}" alt="CV" title="CV"></a></li> 
                 </ul>
             </div>
             <script type="text/javascript" src='{{ url_for('static',filename='js/three.min.js') }}'></script>
