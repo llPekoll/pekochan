@@ -15,10 +15,9 @@ css_dict = {'green':['highlightGreen.css','Gcv.png','Ggit.png','Gin.png'],
             'pink':['highlightPink.css','Pcv.png','Pgit.png','Pin.png'],
             'orange':['highlightOrange.css','Ocv.png','Ogit.png','Oin.png'],
             }
-css =''
+css = []
 if now.day % 3 == 0:
     css = css_dict['green']
-    
 elif now.day % 2 == 0:
     css = css_dict['pink']
 else:
@@ -38,7 +37,7 @@ about = Markup("""
         <p>
             <span id="small">
                     Unity/Unreal, Htc Vive, Hololens stuff,
-                     Also, I won 
+                    Also, I won 
                 <span id="different">Suzzane Award </span>
                     and special Selection to the
                 <span id="different">Annecy Festival</span>.
@@ -54,5 +53,5 @@ about = Markup("""
         </p>
         """) % (total_year, total_month)
 
-rand_name = ['Mamadou', 'La Grenouille', 'Mon Chelly', 'Thomas']
+rand_name = ['Mamadou', 'La Grenouille', 'Mon Chelly', 'Thomas', 'Theary', 'Sisi', 'Juju de fruit']
 
