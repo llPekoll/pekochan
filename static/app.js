@@ -1,9 +1,16 @@
 
-var renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('three'), alpha: true, antialias: true });
+var renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('background'), alpha: true, antialias: true });
+renderer.autoClear = false;
 renderer.setSize( window.innerWidth,  window.innerHeight );
+
 document.addEventListener( 'mousemove', onDocumentMouseMove, false );
+// window.addEventListener( 'resize', onWindowResize, false );
 var scene = new THREE.Scene();
+var scene2 = new THREE.Scene();
+
 var camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 0.1, 2000 );
+var camera2 = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 0.1, 2000 );
+camera2.position.set(1, 1, 800);
 camera.position.set(1, 1, 800);
 var mouse = new THREE.Vector2();
 
@@ -73,6 +80,7 @@ loader.load(wings,
 );
 
 
+
 // postprocessing
 var composer = new THREE.EffectComposer( renderer );
 var renderPass = new THREE.RenderPass(scene, camera);
@@ -102,16 +110,31 @@ pass2.renderToScreen = true;
 
 
 render();
+
+// function onWindowResize() {
+//     camera.aspect = window.innerWidth / window.innerHeight;
+//     camera.updateProjectionMatrix();
+//     renderer.setSize( window.innerWidth, window.innerHeight );
+// }
+
 function onDocumentMouseMove( event ) {
     var mouseX = event.clientX -  window.innerWidth/2;
     var mouseY = event.clientY - window.innerHeight/2;
     camera.position.x += ( mouseX - camera.position.x ) * 0.036;
     camera.position.y += ( - (mouseY) - camera.position.y ) * 0.036;
-    camera.lookAt( scene.position );    
+    camera.lookAt( scene.position ); 
+    camera2.position.x += ( mouseX - camera2.position.x ) * 0.0036;
+    camera2.position.y += ( - (mouseY) - camera2.position.y ) * 0.0036;
+    camera2.lookAt( scene2.position );       
 }
 
 function render() {
     requestAnimationFrame( render );
-    renderer.render( scene, camera );
-    composer.render()
+
+   renderer.clearDepth();
+//    renderer.render( scene, camera );
+   composer.render()
+    renderer.clearDepth();
+    renderer.render( scene2, camera2 );
 }
+
