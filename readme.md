@@ -8,6 +8,7 @@ let's try to make it simple
 TODO:
 =====
     - make the name editable in the page
+    - wings and crown can be animated
 
 
 for hosting.  
@@ -39,6 +40,8 @@ http://www.drama.xxx/
 http://www.larsberg.net/#/thumpThump  
 https://stemkoski.github.io/Three.js/  
 https://threejs.org/examples/#webgl_shaders_vector  
+https://codepen.io/scorch/pen/xdGPVa  
+https://vincentgarreau.com/particles.js/  
 
 lib 
 ====
@@ -53,3 +56,8 @@ https://www.pythonanywhere.com/forums/topic/1496/
 
 
 https://codemyui.com/tag/social-icon/
+
+utils
+=====
+font converterto Json.
+https://gero3.github.io/facetype.js/

@@ -1,54 +1,77 @@
-var loader3 = new THREE.FontLoader();
-loader3.load( fontMenu, function ( font ) 
-    {
-        var xMid, text;
-        var textShape = new THREE.BufferGeometry();
-        var color = 0xffffff;
-        var matDark = new THREE.LineBasicMaterial( {
-            color: color,
-            side: THREE.DoubleSide
-        } );
-        var matLite = new THREE.MeshBasicMaterial( {
-            color: color,
-            transparent: true,
-            opacity: 0.4,
-            side: THREE.DoubleSide
-        } );
-        var message = "\n/Smille.";
-        var shapes = font.generateShapes( message, 100, 2 );
-        var geometry = new THREE.ShapeGeometry( shapes );
-        geometry.computeBoundingBox();
-        xMid = - 0.5 * ( geometry.boundingBox.max.x - geometry.boundingBox.min.x );
-        geometry.translate( xMid, 0, 0 );
-        // make shape ( N.B. edge view not visible )
-        textShape.fromGeometry( geometry );
-        text = new THREE.Mesh( textShape, matLite );
-		text.position.set(40,400,0);
-        scene2.add( text );
-        // make line shape ( N.B. edge view remains visible )
-        var holeShapes = [];
-        for ( var i = 0; i < shapes.length; i ++ ) {
-            var shape = shapes[ i ];
-            if ( shape.holes && shape.holes.length > 0 ) {
-                for ( var j = 0; j < shape.holes.length; j ++ ) {
-                    var hole = shape.holes[ j ];
-                    holeShapes.push( hole );
-                }
-            }
-        }
-        shapes.push.apply( shapes, holeShapes );
-        var lineText = new THREE.Object3D();
-        for ( var i = 0; i < shapes.length; i ++ ) {
-            var shape = shapes[ i ];
-            var points = shape.getPoints();
-            var geometry = new THREE.BufferGeometry().setFromPoints( points );
-            
-            geometry.translate( xMid, 0, 0 );
-            var lineMesh = new THREE.Line( geometry, matDark );
-			lineText.position.set(40,400,-40);
-			lineText.add( lineMesh );
-			
-        }
-		scene2.add( lineText );
-		
-    })
+
+var loader = new THREE.FontLoader();
+loader.load( fontMenu, function ( font ) {
+
+    var textGeo = new THREE.TextGeometry( "/<About>.", {
+
+        font: font,
+
+        size: 200,
+        height: 5,
+        curveSegments: 12,
+        bevelThickness: 2,
+        bevelSize: 5,
+        bevelEnabled: true
+
+	} );  
+	
+	var textMaterial = new THREE.MeshBasicMaterial( { color: 0xffffff } );
+
+    var mesh = new THREE.Mesh( textGeo, textMaterial );
+    mesh.position.set( 200, 250, 0 );
+	mesh.scale.set( .15, .15, .15 );
+	scene2.add( mesh );
+	targetList.push(mesh);
+
+} );
+
+var loader = new THREE.FontLoader();
+loader.load( fontMenu, function ( font ) {
+
+    var textGeo = new THREE.TextGeometry( "/<smile>.", {
+
+        font: font,
+
+        size: 200,
+        height: 5,
+        curveSegments: 12,
+        bevelThickness: 2,
+        bevelSize: 5,
+        bevelEnabled: true
+
+	} );  
+	
+	var textMaterial = new THREE.MeshBasicMaterial( { color: 0xffffff } );
+
+    var smileMesh = new THREE.Mesh( textGeo, textMaterial );
+    smileMesh.position.set( 200, 200, 0 );
+	smileMesh.scale.set( .15, .15, .15 );
+	scene2.add( smileMesh );
+	targetList.push(smileMesh);
+
+} );
+
+var loader = new THREE.FontLoader();
+loader.load( fontMenu, function ( font ) {
+
+    var textGeo = new THREE.TextGeometry( "/<mmd>.", {
+
+        font: font,
+
+        size: 200,
+        height: 5,
+        curveSegments: 12,
+        bevelThickness: 2,
+        bevelSize: 5,
+        bevelEnabled: true
+
+	} );  
+	
+	var textMaterial = new THREE.MeshBasicMaterial( { color: 0xffffff } );
+
+    var mmdMesh = new THREE.Mesh( textGeo, textMaterial );
+    mmdMesh.position.set( 200, 150, 0 );
+	mmdMesh.scale.set( .15, .15, .15 );
+    scene2.add( mmdMesh );
+	targetList.push(mmdMesh);
+} );
