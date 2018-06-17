@@ -51,3 +51,8 @@ https://www.pythonanywhere.com/forums/topic/1496/
 
 
 https://codemyui.com/tag/social-icon/
+
+http://juliangarnier.com/
+https://codemyui.com/blog-post-card-ui/
+https://codemyui.com/gooey-sidebar-stretch-menu-concept/
+https://codemyui.com/blurry-loading-quote-animation-effect/
