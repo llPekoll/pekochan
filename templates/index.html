@@ -15,8 +15,14 @@
 </head>
 
 <body>
-    <div id="ctnr">        
-        <canvas id='three'>
+    <div id="ctnr">		
+        <canvas id='appSelector'>
+            <script> 
+            var smile = "/smile"
+            var fontMenu = "{{ url_for('static', filename='datas/Leitura.json') }}"
+            </script>   
+        </canvas>
+        <canvas id='background'>
             <script> 
                 var peko = "{{ url_for('static', filename='datas/peko.json') }}"
                 var tex = "{{ url_for('static', filename='datas/text_low.jpg') }}"
@@ -63,7 +69,7 @@
             <script type="text/javascript" src='{{ url_for('static',filename='js/MaskPass.js') }}'></script>
             <script  type="text/javascript" src='{{ url_for('static',filename='js/VerticalBlurShader.js') }}'></script>
             <script type="text/javascript" src='{{ url_for('static',filename='js/SepiaShader.js') }}'></script>
-
+            
             <script type="text/javascript" src='{{ url_for('static',filename='js/Detector.js') }}'></script>
             
             <script type="text/javascript" src='{{ url_for('static',filename='js/DotScreenShader.js') }}'></script>
@@ -73,6 +79,8 @@
             <script type="text/javascript" src='{{ url_for('static',filename='js/LuminosityHighPassShader.js') }}'></script>
             
             <script type="text/javascript" src="{{ url_for('static', filename='app.js') }}"></script>
+            <script type="text/javascript" src="{{ url_for('static', filename='mesh.js') }}"></script>
+            <script type="text/javascript" src="{{ url_for('static', filename='menu.js') }}"></script>
         </div>
     </div>
 </body>
