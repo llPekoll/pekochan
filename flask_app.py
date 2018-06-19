@@ -1,4 +1,5 @@
 
+import os
 from flask import Flask, render_template
 from random import randint
 import content as ct
@@ -13,6 +14,8 @@ def index(name=None):
                            about=ct.about,
                            css=ct.css), 200
 
-# if __name__ == '__main__':
-#     app.run()
-app.run(port=5000, debug=True)
+if 'prod' in os.environ:
+    if __name__ == '__main__':
+        app.run()
+else:
+    app.run(port=5000, debug=True)

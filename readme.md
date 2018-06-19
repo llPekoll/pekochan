@@ -26,6 +26,11 @@ update website!
 rm -rf mysite && git clone https://github.com/llPekoll/website && mv website mysite
 just cd mysite && git pull will be much better
 
+log
+===
+ - added enviroement variables
+    add this in the deployement enviroement
+    >> export prod=True
 
 inspiration
 ===============
@@ -61,6 +66,7 @@ http://juliangarnier.com/
 https://codemyui.com/blog-post-card-ui/
 https://codemyui.com/gooey-sidebar-stretch-menu-concept/
 https://codemyui.com/blurry-loading-quote-animation-effect/
+
 utils
 =====
 font converterto Json.
