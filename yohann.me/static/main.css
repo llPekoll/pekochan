@@ -1,89 +1,145 @@
-$white: #FEFEFE;
-$dark: #484855;
-$greyLight: #D1CFD2;
-$greyDark: #9B999E;
-$grey: #B9B5BE;
-$red: #ef5350;
-
 body {
   height: 100vh;
-  background: radial-gradient(circle, #D6A664 , #F9CD8F);
-  display: flex;
+  background: radial-gradient(circle, #D6A664, #F9CD8F);
+  /* display: flex; */
   justify-content: center;
   align-items: center;
   font-family: roboto;
 }
+
 .post {
   display: flex;
   width: 1000px;
 }
+
 .post-left {
   width: 40%;
-  background-color: $dark;
+  background-color: #484855;
   color: white;
   padding: 3em;
   position: relative;
 }
+
 .post-left_title {
   font-size: 2em;
-  text-transform: uppercase;
   font-weight: 700;
 }
+
 .post-left_title_sub {
   font-size: 2em;
-  text-transform: uppercase;
   font-weight: 300;
   margin-top: 0.25em;
 }
+
 .post-left_border {
-  border: 2px solid $red;
-  width: 15%;
+  border: 2px solid #ef5350;
+  width: 50%;
   margin-top: 1em;
 }
+
 .post-left_author {
   position: absolute;
   bottom: 2em;
   display: flex;
   align-items: center;
-  img {
-    width: 2.5em;
-    margin-right:1em;
-    border: 1px solid $white;
-    border-radius: 50%;
-  }
 }
+.post-left_author img {
+  width: 2.5em;
+  margin-right: 1em;
+  border: 1px solid #FEFEFE;
+  border-radius: 50%;
+}
+
 .post-right {
   width: 60%;
-  background-color: $white;
-  color: $dark;
+  background-color: #FEFEFE;
+  color: #484855;
 }
+
 .post-right_body {
   line-height: 2;
   padding: 2em;
-  p {
-    margin-top: 1em;
-    span {
-      font-size: 2em;
-    }
-  }
 }
+.post-right_body p {
+  margin-top: 1em;
+}
+.post-right_body p span {
+  font-size: 2em;
+}
+
 .post-right_footer {
-  display: flex;
+  /* display: flex; */
   justify-content: space-between;
-  box-shadow: 0px -4px 3px -2px rgba(0,0,0,0.1);
+  box-shadow: 0px -4px 3px -2px rgba(0, 0, 0, 0.1);
   padding: 2em;
 }
+
 .post-right_footer_date {
-  text-transform: uppercase;
-  span {
-    font-weight: 700;
-  }
 }
+.post-right_footer_date span {
+  font-weight: 700;
+}
+
 .post-right_footer_pictos {
   font-size: 1.5em;
   margin-right: 1em;
-  .fa-heart {
-    color: $red;
-    margin-right: 1em;
-  }
+}
+.post-right_footer_pictos .fa-heart {
+  color: #ef5350;
+  margin-right: 1em;
+}
+
+p {
+  text-indent: 50px;
+  margin-top:-5px;
+} 
+
+* {
+  box-sizing: border-box;
+}
+/* body {
+  min-height: 100vh;
+  background: #000;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+blockquote {
+  display: block;
+  clear: both;
+  font-size: 3rem;
+}
+cite {
+  display: block;
+  text-align: right;
+  font-family: Verdana, Arial, sans-serif;
+  margin-top: 1rem;
+  font-size: .9rem;
+  color: #aaa;
+  font-style: normal;
+}
+blockquote q {
+  font-family: Georgia, serif;
+  font-style: italic;
+  letter-spacing: .1rem;
+}
+blockquote q span { 
+  will-change: opacity, filter;
+  opacity: 0;
+  filter: blur(0px);
+}
+q {
+  quotes: "“" "”" "‘" "’";
+}
+q:before {
+    content: open-quote;
+    margin-right: .8rem;
+}
+q:after {
+  content: close-quote;
+}
+q:before, q:after {
+  color: #ccc;
+  font-size: 4rem;
 }
