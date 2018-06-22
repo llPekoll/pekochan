@@ -91,3 +91,8 @@ sudo nginx -t
 run app in BG
 
 sudo nohup gunicorn flask_app:app &
+
+configuration
+
+https://stackoverflow.com/questions/11773544/nginx-different-domains-on-same-ip
+vim /etc/nginx/sites-enabled/flask_settings 
