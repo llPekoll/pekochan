@@ -71,3 +71,23 @@ utils
 =====
 font converterto Json.
 https://gero3.github.io/facetype.js/
+
+server Debian 9
+===============
+
+
+https://www.youtube.com/watch?v=kDRRtPO0YPA
+run nginx server
+sudo /etc/init.d/nginx start
+rm /etc/nginx/sites-available/default
+
+
+in case of localhost nginx[1166]: nginx: [emerg] listen() to 0.0.0.0:80, backlog 511 failed (98: Address already in use)
+sudo apachectl stop
+
+to check if the config file is ok
+sudo nginx -t
+
+run app in BG
+
+sudo nohup gunicorn flask_app:app &
