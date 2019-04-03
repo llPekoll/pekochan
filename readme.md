@@ -2,13 +2,15 @@ My website
 ==========
 
 work on my personal website  
-one block website  
-let's try to make it simple  
+
+pip freeze > requirements.txt
 
 TODO:
 =====
-    - make the name editable in the page
-    - wings and crown can be animated
+ - [ ] make it virtual env
+ - [ ] animate the text in the front( make it 3d)
+ - [ ] put a background for the text,(to make the text readable)
+ - [ ] wings and crown can be animated
 
 
 for hosting.  
@@ -21,10 +23,6 @@ top left corner put JS experiences too
 /3dofme  
 /black  
 /bronw nad stuff  
-
-update website!
-rm -rf mysite && git clone https://github.com/llPekoll/website && mv website mysite
-just cd mysite && git pull will be much better
 
 log
 ===
@@ -58,10 +56,7 @@ http://pixi.js
 host
 ====
 https://www.pythonanywhere.com/forums/topic/1496/
-
-
 https://codemyui.com/tag/social-icon/
-
 http://juliangarnier.com/
 https://codemyui.com/blog-post-card-ui/
 https://codemyui.com/gooey-sidebar-stretch-menu-concept/
