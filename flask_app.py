@@ -14,8 +14,5 @@ def index():
     return render_template('index.html', rand=ct.rand_name[rand_name],
                             about= Markup(bio), css=ct.csss[rand_css]), 200
 
-if 'prod' in os.environ:
-    if __name__ == '__main__':
-        app.run()
-else:
-    app.run(port=5000, debug=True)
+# if __name__ == '__main__':
+#     app.run(port=5000, debug=True)
