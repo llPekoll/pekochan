@@ -24,11 +24,6 @@ top left corner put JS experiences too
 /black  
 /bronw nad stuff  
 
-log
-===
- - added enviroement variables
-    add this in the deployement enviroement
-    >> export prod=True
 
 inspiration
 ===============
@@ -70,22 +65,28 @@ https://gero3.github.io/facetype.js/
 server Debian 9
 ===============
 
-
+Basic Gunicorn
 https://www.youtube.com/watch?v=kDRRtPO0YPA
-run nginx server
-sudo /etc/init.d/nginx start
-rm /etc/nginx/sites-available/default
+Advance Gunicorn + ngnix
+https://www.youtube.com/watch?v=OeaI5kB95yM
 
+
+>sudo rm /etc/nginx/sites-enabled/default
+sudo touch /etc/nginx/sites-available/flask_settings
+sudo rm /etc/nginx/sites-enabled/flask_settings
+sudo ln -s /etc/nginx/sites-available/flask_settings /etc/nginx/sites-enabled/flask_settings
+vi /etc/nginx/sites-enabled/flask_settings
+sudo /etc/init.d/nginx restart
 
 in case of localhost nginx[1166]: nginx: [emerg] listen() to 0.0.0.0:80, backlog 511 failed (98: Address already in use)
-sudo apachectl stop
+` sudo apachectl stop`
 
 to check if the config file is ok
-sudo nginx -t
+ ` sudo nginx -t`
 
-run app in BG
+run gunicorn in BG
 
-sudo nohup gunicorn flask_app:app &
+ ` gunicorn -w 4 flask_app:app -D`
 
 configuration
 
