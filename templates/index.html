@@ -25,10 +25,10 @@
         </canvas>
         <canvas id='background'>
             <script> 
-                var peko = "{{ url_for('static', filename='datas/peko.json') }}"
-                var tex = "{{ url_for('static', filename='datas/text_low.jpg') }}"
-                var crown = "{{ url_for('static', filename='datas/crown.json') }}"
-                var wings = "{{ url_for('static', filename='datas/wings.json') }}"
+                let peko = "{{ url_for('static', filename='datas/peko.json') }}"
+                let tex = "{{ url_for('static', filename='datas/text_low.jpg') }}"
+                let crownGltf = "{{ url_for('static', filename='datas/crown.glb') }}"
+                let wings = "{{ url_for('static', filename='datas/wings.json') }}"
             </script>
         </canvas>
         <div class='top'>
@@ -59,6 +59,8 @@
                 </ul>
             </div>
             <script type="text/javascript" src='{{ url_for('static',filename='js/three.min.js') }}'></script>
+            <script type='text/javascript' src='{{ url_for('static',filename='js/tween.js') }}'></script>
+            <script type='text/javascript' src='{{ url_for('static',filename='js/loader/GLTFLoader.js') }}'></script>
             <script type="text/javascript" src='{{ url_for('static',filename='js/postprocessing/EffectComposer.js') }}'></script>
             <script type="text/javascript" src='{{ url_for('static',filename='js/postprocessing/RenderPass.js') }}'></script>
             <script type="text/javascript" src='{{ url_for('static',filename='js/postprocessing/ShaderPass.js') }}'></script>
