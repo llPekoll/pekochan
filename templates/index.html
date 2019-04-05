@@ -25,10 +25,10 @@
         </canvas>
         <canvas id='background'>
             <script> 
-                let peko = "{{ url_for('static', filename='datas/peko.json') }}"
                 let tex = "{{ url_for('static', filename='datas/text_low.jpg') }}"
-                let crownGltf = "{{ url_for('static', filename='datas/crown.glb') }}"
-                let wings = "{{ url_for('static', filename='datas/wings.json') }}"
+                let crown = "{{ url_for('static', filename='datas/crown.glb') }}"
+                let wings = "{{ url_for('static', filename='datas/wings.glb') }}"
+                let peko = "{{ url_for('static', filename='datas/peko.glb') }}"
             </script>
         </canvas>
         <div class='top'>
@@ -61,6 +61,7 @@
             <script type="text/javascript" src='{{ url_for('static',filename='js/three.min.js') }}'></script>
             <script type='text/javascript' src='{{ url_for('static',filename='js/tween.js') }}'></script>
             <script type='text/javascript' src='{{ url_for('static',filename='js/loader/GLTFLoader.js') }}'></script>
+            <script type='text/javascript' src='{{ url_for('static',filename='js/loader/FBXLoader.js') }}'></script>
             <script type="text/javascript" src='{{ url_for('static',filename='js/postprocessing/EffectComposer.js') }}'></script>
             <script type="text/javascript" src='{{ url_for('static',filename='js/postprocessing/RenderPass.js') }}'></script>
             <script type="text/javascript" src='{{ url_for('static',filename='js/postprocessing/ShaderPass.js') }}'></script>
@@ -70,8 +71,9 @@
             <script type="text/javascript" src='{{ url_for('static',filename='js/postprocessing/CopyShader.js') }}'></script>
             <script type="text/javascript" src='{{ url_for('static',filename='js/postprocessing/DigitalGlitch.js') }}'></script>
             
-            <script type="text/javascript" src="{{ url_for('static', filename='app.js') }}"></script>
+            <script type="text/javascript" src="{{ url_for('static', filename='sceneDefinition.js') }}"></script>
             <script type="text/javascript" src="{{ url_for('static', filename='mesh.js') }}"></script>
+            <script type="text/javascript" src="{{ url_for('static', filename='app.js') }}"></script>
         </div>
     </div>
 </body>
