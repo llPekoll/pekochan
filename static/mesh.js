@@ -28,12 +28,12 @@ loader.load( wings,
 	function ( gltf ) {
         gltf.scene.name = "wings"
         scene.add( gltf.scene );
+        
         var model = gltf.scene;
         mixer = new THREE.AnimationMixer(model);
-        gltf.animations.forEach((clip) => {
-            mixer.clipAction(clip).play();
-            console.log("animation");
-        });
+        mixer.clipAction(gltf.animations[0]).play();
+
+
         
 	},
 	function ( xhr ) { console.log( "wings" +( xhr.loaded / xhr.total * 100 ) + '% loaded' ); },

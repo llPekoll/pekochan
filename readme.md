@@ -13,8 +13,9 @@ TODO:
  - [ ] wings and crown can be animated
 
 
-for hosting.  
-paperplane.io  
+GLTF converter  
+https://blackthread.io/gltf-converter/  
+for hosting.
 https://www.pythonanywhere.com/pricing/  
 
 
