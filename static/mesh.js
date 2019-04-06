@@ -40,13 +40,15 @@ loader.load( wings,
 
 window.onload = function () { 
     var crown = scene.getObjectByName( "crown" );
-    var position = { x : 0, y: 40,z:10 };
-    var target = { x : 0, y: 55,z:50 };
-    var tween = new TWEEN.Tween(position).to(target, 1500).yoyo( true ).repeat( Infinity ).easing( TWEEN.Easing.Cubic.InOut );
-    
+    var position = {x:5,  y: 40, z:10 };
+    var target = {x:5,  y: 55 ,z:10};
+    var tween = new TWEEN.Tween(position).to(target, 1500).yoyo( true ).repeat( Infinity )
+
     tween.onUpdate(function(){
         crown.position.x = position.x;
         crown.position.y = position.y;
+        crown.position.z = position.z;
+
     });
 tween.start();
 }

@@ -15,9 +15,9 @@ def get_python_time():
     return total_year, total_month
 
 
-csss = [['highlightGreen.css','Gcv.png','Ggit.png','Gin.png'],
-        ['highlightPink.css','Pcv.png','Pgit.png','Pin.png'],
-        ['highlightOrange.css','Ocv.png','Ogit.png','Oin.png']]
+csss = [['highlightGreen.css','Gcv.png','Ggit.png','Gin.png','green'],
+        ['highlightPink.css','Pcv.png','Pgit.png','Pin.png','pink'],
+        ['highlightOrange.css','Ocv.png','Ogit.png','Oin.png','orange']]
 
 rand_name = ['Mamadou', 'La Grenouille', 'Mon Chelly', 'Thomas', 'Theary', 'Sisi', 'Juju de fruit']
 
@@ -28,7 +28,7 @@ bio = """
     </p>
         Now recycled in <span id="different">Python Development</span>, 
     <p>    
-        <span id="small">for <span id="different">TOTALYEAR</span> years and <span id="different">TOTALMONTH</span> months now.
+        <span id="small">for <span id="different">TOTALYEAR</span> years and <span id="different">TOTALMONTH</span> months.
     </span>
     </p>
         I used to some do AR/VR, Lecturer at University,
@@ -50,3 +50,5 @@ bio = """
         ===> <span id="different"><a href="mailto:yoyo.mepa@gmail.com?Subject=Hello from web" target="_top">contact me</a></span> .
     </p>
 """
+
+

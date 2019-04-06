@@ -20,11 +20,13 @@
         <canvas id='appSelector'>
             <script> 
             var smile = "/smile"
-            var fontMenu = "{{ url_for('static', filename='datas/Leitura.json') }}"
+            var cssColor = "{{css[4]}}"
+            var randomName = "{{rand}}"
             </script>   
         </canvas>
         <canvas id='background'>
             <script> 
+                let leitura = "{{ url_for('static', filename='datas/Leitura2.json') }}"
                 let tex = "{{ url_for('static', filename='datas/text_low.jpg') }}"
                 let crown = "{{ url_for('static', filename='datas/crown.glb') }}"
                 let wings = "{{ url_for('static', filename='datas/wings.glb') }}"
@@ -32,22 +34,15 @@
             </script>
         </canvas>
         <div class='top'>
-            <div id="title">
-                {% if name %}
-                <h1> 
-                    <span id="white">Hello,</span> 
-                    {{ name }}
-                    <span id="white">.</span>
-                </h1>
-                {% else %}
-                <h1> 
-                    <span id="white">Hello,</span> 
-                    {{rand}}
-                    <span id="white">.</span>
-                </h1>
-                {% endif %} 
-                {{about}}
-            </div>
+            <div class="title">
+                <h3 class="IuseTo">I use to do some 2d/3d animation.</h3>
+                <h2 class="now">Now recycled in Python Development,</h2>
+                <h3 class="time">for{{years}} years and {{months}} months.</h3>
+                <h2 class="ARVR">I used to some do AR/VR, Lecturer at University,</h2>
+                <h3 class="time">Unity/Unreal, Htc Vive, Hololens stuff, Also, I won Suzzane Award and special Selection to the Annecy Festival</h3>
+                <h2 class="Flask">Now doing mostly Python/Flask, Js/Threejs, C# Unity</h2>
+                <h2 class="contact">contact me</h2>
+                </div>
             <div>
                 <ul class="social-media-list">
                     <li><a href="https://www.linkedin.com/in/yohann-mepa-69015073/">
@@ -73,6 +68,7 @@
             
             <script type="text/javascript" src="{{ url_for('static', filename='sceneDefinition.js') }}"></script>
             <script type="text/javascript" src="{{ url_for('static', filename='mesh.js') }}"></script>
+            <script type="text/javascript" src="{{ url_for('static', filename='text.js') }}"></script>
             <script type="text/javascript" src="{{ url_for('static', filename='app.js') }}"></script>
         </div>
     </div>
