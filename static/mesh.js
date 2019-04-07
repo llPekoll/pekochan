@@ -37,7 +37,6 @@ loader.load( wings,
 	function ( error ) { console.log( 'An error happened' );}
 );
 
-
 window.onload = function () { 
     var crown = scene.getObjectByName( "crown" );
     var position = {x:5,  y: 40, z:10 };
@@ -54,8 +53,8 @@ window.onload = function () {
 }
 stars = []
 function addSphere(){
-    for ( var z= -1000; z < 1000; z+=20 ) {
-
+    for ( var z= -1000; z < 1000; z+=20 ) 
+    {
         var geometry   = new THREE.SphereGeometry(0.5, 32, 32)
         var material = new THREE.MeshBasicMaterial( {color: 0xffffff} );
         var sphere = new THREE.Mesh(geometry, material)
@@ -69,16 +68,12 @@ function addSphere(){
         stars.push(sphere); 
     }
 }
+function animateStars() { 
+    for(var i=0; i<stars.length; i++) {
+        star = stars[i]; 
+        star.position.z +=  i/20;
+        if(star.position.z>1000) star.position.z-=2000; 
+    }
+}
 
-	function animateStars() { 
-				
-		for(var i=0; i<stars.length; i++) {
-			star = stars[i]; 
-			star.position.z +=  i/20;
-			if(star.position.z>1000) star.position.z-=2000; 
-		}
-	
-	}
-
-
-    addSphere();
+addSphere();

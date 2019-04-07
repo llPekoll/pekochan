@@ -1,4 +1,3 @@
-
 document.addEventListener( 'mousemove', onDocumentMouseMove, false );
 document.addEventListener( 'resize', onWindowResize, false );
 // postprocessing
@@ -35,24 +34,15 @@ function onDocumentMouseMove( event ) {
     camera.position.x += ( mouseX - camera.position.x ) * 0.036;
     camera.position.y += ( - (mouseY) - camera.position.y ) * 0.036;
     camera.lookAt( scene.position ); 
-    camera2.position.x += ( mouseX - camera2.position.x ) * 0.0036;
-    camera2.position.y += ( - (mouseY) - camera2.position.y ) * 0.0036;
-    camera2.lookAt( scene2.position );
-
     mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
 	mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
-
 }
 
 function render() {
-
     requestAnimationFrame( render );
     renderer.clearDepth();
     composer.render()
-    // renderer.clearDepth();
-	// renderer.render( scene2, camera2 );
-	animateStars();
-	
+	animateStars();	
 	TWEEN.update();
 	mixer.update(clock.getDelta());
 }

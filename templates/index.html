@@ -11,17 +11,15 @@
         }
     </style>
     <link rel="icon" href="{{url_for('static', filename='crown.png')}}" />
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='datas/main.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='datas/') }}{{css[0]}}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='datas/main.css') }}">>
 </head>
 
 <body>
     <div id="ctnr">		
         <canvas id='background'>
             <script> 
-                var cssColor = "{{css[4]}}"
-            var randomName = "{{rand}}"
-                let leitura = "{{ url_for('static', filename='datas/Leitura2.json') }}"
+                let cssColor = "{{css[4]}}"
+                let randomName = "{{rand}}"
                 let tex = "{{ url_for('static', filename='datas/text_low.jpg') }}"
                 let crown = "{{ url_for('static', filename='datas/crown.glb') }}"
                 let wings = "{{ url_for('static', filename='datas/wings.glb') }}"
@@ -46,27 +44,26 @@
                 <h2 >I used to some do AR/VR, Lecturer at University,</h2>
                 <h3 >Unity/Unreal, Htc Vive, Hololens stuff, Also, I won <span id="different">Suzzane Award</span> and special Selection to the <span id="different">Annecy Festival</span>.</h3>
                 <h2 >Now doing mostly <span id="different">Python/Flask, Js/Threejs, C#/Unity</span>.</h2>
-                <h2 id='contact'>  ==><a href="mailto:yoyo.mepa@gmail.com?Subject=Hello from the website" target="_top"> contact me </a></h2>
+                <h3 > And I used to work for<span id="different">Augment</span>, <span id="different">Addsome</span>, <span id="different">Fixstudio</span>, processing datas with python moslty.</h3>
+                <h2 id='contact'>  ==><a href="mailto:yoyo.mepa@gmail.com?Subject=Hello from the website" target="_top"> contact me </a> <== </h2>
             </div>
         </div>
-            <script type="text/javascript" src='{{ url_for('static',filename='js/three.min.js') }}'></script>
-            <script type='text/javascript' src='{{ url_for('static',filename='js/tween.js') }}'></script>
-            <script type='text/javascript' src='{{ url_for('static',filename='js/loader/GLTFLoader.js') }}'></script>
-            <script type='text/javascript' src='{{ url_for('static',filename='js/loader/FBXLoader.js') }}'></script>
-            <script type="text/javascript" src='{{ url_for('static',filename='js/postprocessing/EffectComposer.js') }}'></script>
-            <script type="text/javascript" src='{{ url_for('static',filename='js/postprocessing/RenderPass.js') }}'></script>
-            <script type="text/javascript" src='{{ url_for('static',filename='js/postprocessing/ShaderPass.js') }}'></script>
-            <script type="text/javascript" src='{{ url_for('static',filename='js/postprocessing/GlitchPass.js') }}'></script>
-            <script type="text/javascript" src='{{ url_for('static',filename='js/postprocessing/RGBShiftShader.js') }}'></script>
-            <script type="text/javascript" src='{{ url_for('static',filename='js/postprocessing/DotScreenShader.js') }}'></script>
-            <script type="text/javascript" src='{{ url_for('static',filename='js/postprocessing/CopyShader.js') }}'></script>
-            <script type="text/javascript" src='{{ url_for('static',filename='js/postprocessing/DigitalGlitch.js') }}'></script>
+    <script type="text/javascript" src='{{ url_for('static',filename='js/three.min.js') }}'></script>
+    <script type='text/javascript' src='{{ url_for('static',filename='js/tween.js') }}'></script>
+    <script type='text/javascript' src='{{ url_for('static',filename='js/loader/GLTFLoader.js') }}'></script>
+    <script type='text/javascript' src='{{ url_for('static',filename='js/loader/FBXLoader.js') }}'></script>
+    <script type="text/javascript" src='{{ url_for('static',filename='js/postprocessing/EffectComposer.js') }}'></script>
+    <script type="text/javascript" src='{{ url_for('static',filename='js/postprocessing/RenderPass.js') }}'></script>
+    <script type="text/javascript" src='{{ url_for('static',filename='js/postprocessing/ShaderPass.js') }}'></script>
+    <script type="text/javascript" src='{{ url_for('static',filename='js/postprocessing/GlitchPass.js') }}'></script>
+    <script type="text/javascript" src='{{ url_for('static',filename='js/postprocessing/RGBShiftShader.js') }}'></script>
+    <script type="text/javascript" src='{{ url_for('static',filename='js/postprocessing/DotScreenShader.js') }}'></script>
+    <script type="text/javascript" src='{{ url_for('static',filename='js/postprocessing/CopyShader.js') }}'></script>
+    <script type="text/javascript" src='{{ url_for('static',filename='js/postprocessing/DigitalGlitch.js') }}'></script>
 
-            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
-            <script type="text/javascript" src="{{ url_for('static', filename='sceneDefinition.js') }}"></script>
-            <script type="text/javascript" src="{{ url_for('static', filename='mesh.js') }}"></script>
-            <script type="text/javascript" src="{{ url_for('static', filename='app.js') }}"></script>
-            <script type="text/javascript" src="{{ url_for('static', filename='textanim.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='sceneDefinition.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='mesh.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='app.js') }}"></script>
 </body>
 
 </html>
