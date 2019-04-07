@@ -51,6 +51,8 @@ function render() {
     composer.render()
     // renderer.clearDepth();
 	// renderer.render( scene2, camera2 );
+	animateStars();
+	
 	TWEEN.update();
 	mixer.update(clock.getDelta());
 }

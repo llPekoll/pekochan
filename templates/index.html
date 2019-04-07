@@ -17,15 +17,10 @@
 
 <body>
     <div id="ctnr">		
-        <canvas id='appSelector'>
-            <script> 
-            var smile = "/smile"
-            var cssColor = "{{css[4]}}"
-            var randomName = "{{rand}}"
-            </script>   
-        </canvas>
         <canvas id='background'>
             <script> 
+                var cssColor = "{{css[4]}}"
+            var randomName = "{{rand}}"
                 let leitura = "{{ url_for('static', filename='datas/Leitura2.json') }}"
                 let tex = "{{ url_for('static', filename='datas/text_low.jpg') }}"
                 let crown = "{{ url_for('static', filename='datas/crown.glb') }}"
@@ -33,34 +28,27 @@
                 let peko = "{{ url_for('static', filename='datas/peko.glb') }}"
             </script>
         </canvas>
-        <div class='top'>
-            <div id='blackBG'>
-                <div id="about">
-                    <h1>Hello,  <span id="different">{{rand}}</span></h1>
-                    <h2>My name is <span id="different">Yohann</span>,</h2> 
-                    <h3 >I use to do some 2d/3d animation.</h3>
-                    <h2 >Now recycled in <span id="different">Python Development,</span></h2>
-                    {% if months %}
-                        <h3 >for<span id="different">{{years}}</span> years and <span id="different">{{months}}</span> months.</h3>
-                    {% else %}
-                        <h3 >for <span id="different">{{years}}</span> years.</h3>
-                    {% endif %}
-                    <h2 >I used to some do AR/VR, Lecturer at University,</h2>
-                    <h3 >Unity/Unreal, Htc Vive, Hololens stuff, Also, I won <span id="different">Suzzane Award</span> and special Selection to the <span id="different">Annecy Festival</span></h3>
-                    <h2 >Now doing mostly <span id="different">Python/Flask, Js/Threejs, C# Unity</span></h2>
-                </div>
-                <h2 id='contact'><a href="mailto:yoyo.mepa@gmail.com?Subject=Hello from the website" target="_top">- contact me -</a></h2>
+        <div class='blackBG'>
+            <div id='top'>
+                <h1 id="title">Hello,  <span id="different">{{rand}}</span></h1>
             </div>
-            <div>
-                <ul class="social-media-list">
-                    <li><a href="https://www.linkedin.com/in/yohann-mepa-69015073/">
-                        <img src="{{ url_for('static', filename='datas/') }}{{css[3]}}" alt="LinkedIn" title="LinkedIn"></a></li>
-                    <li><a href="https://github.com/llPekoll/website">
-                        <img src="{{ url_for('static', filename='datas/') }}{{css[2]}}" alt="GitHub" title="GitHub"></a></li>
-                    <li><a href="{{ url_for('static', filename='datas/Yohann_MEPA_CV.pdf') }}">
-                        <img src="{{ url_for('static', filename='datas/') }}{{css[1]}}" alt="CV" title="CV"></a></li> 
-                </ul>
+        </div>      
+        <div class='blackBG'>
+            <div id='about'>
+                <h2 >My name is <span id="different">Yohann Mepa</span>,</h2> 
+                <h3 >I use to do some 2d/3d animation.</h3>
+                <h2 >Now recycled in <span id="different">Python Development,</span></h2>
+                {% if months %}
+                    <h3 >for<span id="different">{{years}}</span> years and <span id="different">{{months}}</span> months.</h3>
+                {% else %}
+                    <h3 >for <span id="different">{{years}}</span> years.</h3>
+                {% endif %}
+                <h2 >I used to some do AR/VR, Lecturer at University,</h2>
+                <h3 >Unity/Unreal, Htc Vive, Hololens stuff, Also, I won <span id="different">Suzzane Award</span> and special Selection to the <span id="different">Annecy Festival</span>.</h3>
+                <h2 >Now doing mostly <span id="different">Python/Flask, Js/Threejs, C#/Unity</span>.</h2>
+                <h2 id='contact'>  ==><a href="mailto:yoyo.mepa@gmail.com?Subject=Hello from the website" target="_top"> contact me </a></h2>
             </div>
+        </div>
             <script type="text/javascript" src='{{ url_for('static',filename='js/three.min.js') }}'></script>
             <script type='text/javascript' src='{{ url_for('static',filename='js/tween.js') }}'></script>
             <script type='text/javascript' src='{{ url_for('static',filename='js/loader/GLTFLoader.js') }}'></script>
@@ -73,15 +61,12 @@
             <script type="text/javascript" src='{{ url_for('static',filename='js/postprocessing/DotScreenShader.js') }}'></script>
             <script type="text/javascript" src='{{ url_for('static',filename='js/postprocessing/CopyShader.js') }}'></script>
             <script type="text/javascript" src='{{ url_for('static',filename='js/postprocessing/DigitalGlitch.js') }}'></script>
-            
 
             <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
             <script type="text/javascript" src="{{ url_for('static', filename='sceneDefinition.js') }}"></script>
             <script type="text/javascript" src="{{ url_for('static', filename='mesh.js') }}"></script>
-            <script type="text/javascript" src="{{ url_for('static', filename='text.js') }}"></script>
             <script type="text/javascript" src="{{ url_for('static', filename='app.js') }}"></script>
-        </div>
-    </div>
+            <script type="text/javascript" src="{{ url_for('static', filename='textanim.js') }}"></script>
 </body>
 
 </html>

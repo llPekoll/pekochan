@@ -19,6 +19,7 @@ loader.load( crown,
         gltf.scene.children[0].name = "crown"
         scene.add( gltf.scene );
         gltf.scene.children[0].scale.set(20,20,20);
+        gltf.scene.children[0].translate.set(5,5,10);
 	},
 	function ( xhr ) { console.log( "crown" + ( xhr.loaded / xhr.total * 100 ) + '% loaded' );},
 	function ( error ) { console.log( 'An error happened' ); }
@@ -28,7 +29,6 @@ loader.load( wings,
 	function ( gltf ) {
         gltf.scene.name = "wings"
         scene.add( gltf.scene );
-        
         var model = gltf.scene;
         mixer = new THREE.AnimationMixer(model);
         mixer.clipAction(gltf.animations[0]).play();
@@ -52,3 +52,33 @@ window.onload = function () {
     });
     tween.start();
 }
+stars = []
+function addSphere(){
+    for ( var z= -1000; z < 1000; z+=20 ) {
+
+        var geometry   = new THREE.SphereGeometry(0.5, 32, 32)
+        var material = new THREE.MeshBasicMaterial( {color: 0xffffff} );
+        var sphere = new THREE.Mesh(geometry, material)
+
+        sphere.position.x = Math.random() * 1000 - 500;
+        sphere.position.y = Math.random() * 1000 - 500;
+
+        sphere.position.z = z;
+        sphere.scale.x = sphere.scale.y = 2;
+        scene.add( sphere );
+        stars.push(sphere); 
+    }
+}
+
+	function animateStars() { 
+				
+		for(var i=0; i<stars.length; i++) {
+			star = stars[i]; 
+			star.position.z +=  i/20;
+			if(star.position.z>1000) star.position.z-=2000; 
+		}
+	
+	}
+
+
+    addSphere();
