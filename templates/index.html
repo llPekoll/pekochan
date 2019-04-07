@@ -12,13 +12,14 @@
     </style>
     <link rel="icon" href="{{url_for('static', filename='crown.png')}}" />
     <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='datas/main.css') }}">>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='datas/') }}{{css[0]}}">
 </head>
 
 <body>
     <div id="ctnr">		
         <canvas id='background'>
             <script> 
-                let cssColor = "{{css[4]}}"
+                let cssColor = "{{css[1]}}"
                 let randomName = "{{rand}}"
                 let tex = "{{ url_for('static', filename='datas/text_low.jpg') }}"
                 let crown = "{{ url_for('static', filename='datas/crown.glb') }}"
