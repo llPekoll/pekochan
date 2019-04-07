@@ -12,8 +12,16 @@ var camera = new THREE.PerspectiveCamera( 45, winX / winY, 0.1, 2000 );
 camera.position.set(1, 1, 800);
 
 // LIGHTS
-var light = new THREE.AmbientLight( 0x404040 );
-scene.add( light );
-var light = new THREE.PointLight(0x111100, 400, 700);
-light.position.set(40,100,200);
+//  var light = new THREE.AmbientLight( 0x202020 );
+// scene.add( light );
+var light = new THREE.PointLight(0xffffff, 1);
+light.position.set(180,85,265);
 scene.add(light);
+
+var light2 = new THREE.PointLight(0xffffff, 0.1);
+light2.position.set(-312,0,48);
+scene.add(light2);
+
+var light3 = new THREE.PointLight(0xffffff, 3);
+light3.position.set(-3,275,-271);
+scene.add(light3);

@@ -1,6 +1,9 @@
 // MESHES
 let texture = new THREE.TextureLoader().load( tex );
-let pekoMat = new THREE.MeshBasicMaterial( { map: texture } );
+let pekoMat = new THREE.MeshLambertMaterial( { map: texture } );
+let basicMat = new THREE.MeshLambertMaterial( {color: 0xffffff});
+basicMat.name = "basicMat"
+
 pekoMat.name = "pekomat"
 
 loader.load( peko,
@@ -18,6 +21,7 @@ loader.load( crown,
 	function ( gltf ) {
         gltf.scene.children[0].name = "crown"
         scene.add( gltf.scene );
+        gltf.scene.material = basicMat;
         gltf.scene.children[0].scale.set(20,20,20);
         gltf.scene.children[0].translate.set(5,5,10);
 	},
@@ -30,6 +34,7 @@ loader.load( wings,
         gltf.scene.name = "wings"
         scene.add( gltf.scene );
         var model = gltf.scene;
+        gltf.scene.children[0].material = basicMat;
         mixer = new THREE.AnimationMixer(model);
         mixer.clipAction(gltf.animations[0]).play();
 	},
@@ -39,6 +44,7 @@ loader.load( wings,
 
 window.onload = function () { 
     var crown = scene.getObjectByName( "crown" );
+    crown.material = basicMat
     var position = {x:5,  y: 40, z:10 };
     var target = {x:5,  y: 55 ,z:10};
     var tween = new TWEEN.Tween(position).to(target, 1500).yoyo( true ).repeat( Infinity )
