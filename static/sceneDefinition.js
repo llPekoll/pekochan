@@ -4,7 +4,7 @@ const winX = window.innerWidth;
 const winY = window.innerHeight;
 renderer.setSize( winX,  winY );
 
-var mixer = '';
+var mixer;
 var loader = new THREE.GLTFLoader();
 var clock = new THREE.Clock();
 var scene = new THREE.Scene();

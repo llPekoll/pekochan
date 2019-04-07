@@ -50,5 +50,5 @@ window.onload = function () {
         crown.position.z = position.z;
 
     });
-tween.start();
+    tween.start();
 }

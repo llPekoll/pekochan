@@ -7,10 +7,11 @@ pip freeze > requirements.txt
 
 TODO:
 =====
+ - [ ] remove month if ==0
  - [ ] make it virtual env
  - [ ] animate the text in the front( make it 3d)
  - [ ] put a background for the text,(to make the text readable)
- - [ ] wings and crown can be animated
+ - [x] wings and crown can be animated
 
 
 GLTF converter  

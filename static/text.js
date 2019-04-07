@@ -13,8 +13,19 @@ loader.load( textFont, function ( font ) {
         height: 0,
 	} );  
     var hello = new THREE.Mesh( textGeo, textWhite );
+    hello.name = "hello"
     hello.position.set( -winX/3, winY/5, 0 );
-	scene2.add( hello );
+    hello.rotation.x = 1.7
+    scene2.add( hello );
+    var rotation = {x:1.7};
+    var target = {x:0};
+    var tween = new TWEEN.Tween(rotation).to(target, 1500).delay(4000)
+    tween.onUpdate(function(){
+        hello.rotation.x = rotation.x;
+    });
+    
+tween.start();
+
 } );
 loader.load( textFont, function ( font ) {
     var textGeo = new THREE.TextGeometry( randomName, {

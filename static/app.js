@@ -49,8 +49,8 @@ function render() {
     requestAnimationFrame( render );
     renderer.clearDepth();
     composer.render()
-    renderer.clearDepth();
-	renderer.render( scene2, camera2 );
+    // renderer.clearDepth();
+	// renderer.render( scene2, camera2 );
 	TWEEN.update();
 	mixer.update(clock.getDelta());
 }

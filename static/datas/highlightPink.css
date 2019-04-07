@@ -1,25 +1,7 @@
-
-a:link {
+a:link, a:visited, a:active, #different {
   color: #ed145b;
 }
-a:visited {
-  color: #8a0b35;
-}
+
 a:hover {
   color: #8a0b35;
-}
-a:active {
-  color: #ed145b;
-}
-h1
-{
-    font-size: 2em;
-    color: #ed145b;
-    font-family: Leitura,Georgia,Cambria,"Times New Roman",Times,serif;
-}
-
-
-#different
-{
-    color: #ed145b;  
 }
