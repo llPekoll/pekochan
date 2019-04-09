@@ -90,6 +90,10 @@ run gunicorn in BG
 
  ` gunicorn -w 4 flask_app:app -D`
 
+using uwsgi
+
+ `uwsgi --socket 0.0.0.0:5000 --protocol=http -w wsgi:app`
+
 configuration
 
 https://stackoverflow.com/questions/11773544/nginx-different-domains-on-same-ip
