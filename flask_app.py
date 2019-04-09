@@ -1,7 +1,8 @@
 import os
-from flask import Flask, render_template, Markup
+from flask import Flask, render_template
 from random import randint
 import content as ct
+
 app = Flask(__name__)
 
 @app.route('/')

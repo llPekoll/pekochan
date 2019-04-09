@@ -64,37 +64,13 @@ utils
 font converterto Json.
 https://gero3.github.io/facetype.js/
 
-server Debian 9
+server Ubuntu 18.04
 ===============
 
-Basic Gunicorn
-https://www.youtube.com/watch?v=kDRRtPO0YPA
-Advance Gunicorn + ngnix
-https://www.youtube.com/watch?v=OeaI5kB95yM
-
-
->sudo rm /etc/nginx/sites-enabled/default
-sudo touch /etc/nginx/sites-available/flask_settings
-sudo rm /etc/nginx/sites-enabled/flask_settings
-sudo ln -s /etc/nginx/sites-available/flask_settings /etc/nginx/sites-enabled/flask_settings
-vi /etc/nginx/sites-enabled/flask_settings
-sudo /etc/init.d/nginx restart
-
-in case of localhost nginx[1166]: nginx: [emerg] listen() to 0.0.0.0:80, backlog 511 failed (98: Address already in use)
-` sudo apachectl stop`
-
-to check if the config file is ok
- ` sudo nginx -t`
-
-run gunicorn in BG
-
- ` gunicorn -w 4 flask_app:app -D`
-
-using uwsgi
-
- `uwsgi --socket 0.0.0.0:5000 --protocol=http -w wsgi:app`
 
 configuration
+https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications-with-uswgi-and-nginx-on-ubuntu-18-04
 
-https://stackoverflow.com/questions/11773544/nginx-different-domains-on-same-ip
-vim /etc/nginx/sites-enabled/flask_settings 
+
+user ubuntu
+https://www.digitalocean.com/community/tutorials/how-to-create-a-sudo-user-on-ubuntu-quickstart
