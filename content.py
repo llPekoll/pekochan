@@ -4,7 +4,7 @@ from collections import namedtuple
 now = datetime.now()
 
 def get_python_time():
-    
+
     Day = namedtuple('Day','year month')
     pday = Day(2016,4)
     years = now.year - pday.year
