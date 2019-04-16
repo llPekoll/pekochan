@@ -15,5 +15,6 @@ def index():
                             years=years,
                             months=months), 200
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+@app.route('/sakulu')
+def sakulu():
+    return render_template('sakulu.html'), 200

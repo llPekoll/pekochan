@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+    <style type="text/css">
+        body {
+            background-color: #404040;
+            margin: 0px;
+            overflow: hidden;
+        }
+    </style>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sakulu</title>
+</head>
+<body>
+    <canvas id='background'>
+    </canvas>
+    <script type="text/javascript" src='{{ url_for('static',filename='js/three.min.js') }}'></script>
+    <script type="text/javascript" src='{{ url_for('static',filename='js/effects/OutlineEffect.js') }}'></script>
+    <script type='text/javascript' src='{{ url_for('static',filename='js/tween.js') }}'></script>
+    <script type="text/javascript" src='{{ url_for('static',filename='sakulu.js') }}'></script>
+</body>
+</html>
