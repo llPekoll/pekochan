@@ -26,6 +26,10 @@ top left corner put JS experiences too
 /black  
 /bronw nad stuff  
 
+SASS
+====
+` > cd static`
+` > sass --watch scss:css`
 
 inspiration
 ===============

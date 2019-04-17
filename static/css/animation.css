@@ -1,0 +1,15 @@
+.title {
+  transform: translate(50%, 0);
+  animation: move 1s;
+}
+
+@keyframes move {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(50%, 0);
+  }
+}
+
+/*# sourceMappingURL=animation.css.map */

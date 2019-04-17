@@ -42,7 +42,9 @@ function render() {
     requestAnimationFrame( render );
     renderer.clearDepth();
     composer.render()
-	animateStars();	
-	TWEEN.update();
-	mixer.update(clock.getDelta());
+    animateStars();	
+    TWEEN.update();
+    if(mixer){
+        mixer.update(clock.getDelta());
+    }
 }
