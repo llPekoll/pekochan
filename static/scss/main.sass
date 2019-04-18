@@ -25,52 +25,73 @@ canvas
 
 #top
     text-align: right
-    width: 100%
     margin-top: 2%
     padding-right: 3%
-    font-size: 1em
-    -webkit-font-smoothing: antialiased
 
-#title
-    padding-top: 1%
-    padding-right: 3%
-    left: - 200%
+#about 
+    position: absolute
+    bottom: 7%
+    padding-top: 2%
+    padding-left: 4%
+    padding-bottom: 0.5%
 
-#title.translateTop 
-    overflow-wrap: anywhere
+    h2
+        font-size: 90%
+        margin-top: -5px
+
+    h3
+        margin-left: 30px
+        margin-top: -20px
+        font-size: 63%
+
+= transition($transitionTime) 
     -webkit-transition: 2s
     -moz-transition: 2s
     -ms-transition: 2s
     -o-transition: 2s
     transition: 2s
     transition-timing-function: cubic-bezier(0, 0, 0, 1)
+    transition-delay: $transitionTime
+    left: 0
+
+// =====> Animation
+
+#title
+    padding-top: 1%
+    padding-right: 3%
+    left: - 200%
     position: relative
-    left: -1%
 
+#myName,#iUse,#now,#for,#iUse2,#unity,#now2,#and,#contact
+    position: relative
+    left: 100%
 
+#title.translate
+    +transition(0s)
 
-// #about 
-// 
-//   position: absolute
-//   bottom: 7%
-//   padding-top: 2%
-//   padding-left: 4%
-//   padding-bottom: 0.5%
-//   font-size: 1em
-//   -webkit-font-smoothing: antialiased
-//   width: 100%
-//   background-color: rgba(0, 0, 0, 0.5)
-// 
+#myName.translate
+    +transition(1.5s)
 
-// h2
-// 
-//   font-size: 90%
-//   margin-top: -5px
-// 
+#iUse.translate 
+    +transition(1.6s)
 
-// h3
-// 
-//   margin-left: 30px
-//   margin-top: -20px
-//   font-size: 63%
-// 
+#now.translate
+    +transition(1.9s)
+
+#for.translate 
+    +transition(2s)
+
+#iUse2.translate 
+    +transition(2.2s)
+
+#unity.translate 
+    +transition(2.3s)
+
+#now2.translate
+    +transition(2.5s)
+
+#and.translate 
+    +transition(2.6s)
+
+#contact.translate 
+    +transition(2.8s)

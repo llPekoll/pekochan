@@ -1,7 +1,11 @@
+function loader() {
 
-window.onload = function () { 
-var top = document.getElementById('title');
+    var textList = ['title','myName','iUse','now','for','iUse2','unity','now2','and','contact'];
 
-top.classList.add('translatetop');
-
+    for (var i = 0; i < textList.length; i++) {
+        // console.log(textList[i]);
+        // eval( "var "+textList[i] +"document.getElementById("+textList[i]+");");
+        var elt = document.getElementById(textList[i]);
+        elt.classList.add('translate');
+    }
 }

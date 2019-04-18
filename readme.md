@@ -7,6 +7,8 @@ pip freeze > requirements.txt
 
 TODO:
 =====
+ - [ ] rings around me and add planets
+ - [ ] flask assets
  - [x] remove month if ==0
  - [x] make it virtual env
  - [ ] animate the text in the front( make it 3d)
@@ -19,12 +21,6 @@ https://blackthread.io/gltf-converter/
 for hosting.
 https://www.pythonanywhere.com/pricing/  
 
-
-top left corner put JS experiences too  
-/smile  
-/3dofme  
-/black  
-/bronw nad stuff  
 
 SASS
 ====

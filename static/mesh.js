@@ -33,7 +33,7 @@ loader.load( peko,
 	function ( xhr ) {
         if ( xhr.loaded / xhr.total >=1){
             pekoIsLoaded = true;
-            console.log("peko is Loaded");
+            // console.log("peko is Loaded");
         }
         // console.log( "peko" +( xhr.loaded / xhr.total * 100 ) + '% loaded' );
         },
@@ -49,7 +49,7 @@ loader.load( crown,
 	function ( xhr ) { 
         if ( xhr.loaded / xhr.total >=1){
             crownIsLoaded = true;
-            console.log("crown is Loaded");
+            // console.log("crown is Loaded");
         }
     },
 	function ( error ) { console.log( 'An error happened' ); }
@@ -67,17 +67,18 @@ loader.load( wings,
 	function ( xhr ) { 
         if ( xhr.loaded / xhr.total >=1){
             wingsIsLoaded = true;
-            console.log("wings are Loaded");
+            // console.log("wings are Loaded");
         }
     },
 	function ( error ) { console.log( 'An error happened' );}
 );
 
 window.onload = function () { 
+    loader()
     var crown = scene.getObjectByName( "crown" );
     crown.material = basicMat
-    var position = {y: 40 };
-    var target = {y: 55 };
+    var position = {y: 40};
+    var target = {y: 55};
     var tween = new TWEEN.Tween(position).to(target, 1500).yoyo( true ).repeat( Infinity )
 
     tween.onUpdate(function(){
