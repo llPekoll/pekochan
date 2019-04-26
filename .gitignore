@@ -1,5 +1,6 @@
 *.DS_Store
 *.pyc
 .vscode/
+static/.webassets-cache/
 venv/
 __pycache__/

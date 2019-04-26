@@ -20,14 +20,20 @@ TODO:
 
 GLTF converter  
 https://blackthread.io/gltf-converter/  
-for hosting.
-https://www.pythonanywhere.com/pricing/  
 
 
 SASS
 ====
 ` > cd static`
 ` > sass --watch scss:css`
+
+update the website
+==================
+
+`sudo systemctl stop nginx`
+`top -> killall uwsgi`
+`Git pull`
+`sudo systemctl start nginx`
 
 inspiration
 ===============
