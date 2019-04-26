@@ -26,7 +26,7 @@ function onWindowResize() {
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
     renderer.setSize( window.innerWidth, window.innerHeight );
-}
+};
 
 function onDocumentMouseMove( event ) {
     var mouseX = event.clientX -  window.innerWidth/2;
@@ -36,15 +36,15 @@ function onDocumentMouseMove( event ) {
     camera.lookAt( scene.position ); 
     mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
 	mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
-}
+};
 
 function render() {
     requestAnimationFrame( render );
     renderer.clearDepth();
-    composer.render()
+    composer.render();
     animateStars();	
     TWEEN.update();
     if(mixer){
         mixer.update(clock.getDelta());
-    }
-}
+    };
+};

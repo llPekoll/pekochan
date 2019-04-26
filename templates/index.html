@@ -2,6 +2,11 @@
 <html>
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Mepa Yohann's personal website">
+    <meta name="keywords" content="Yohann mepa,yohann,mepa,Python developer,threejs">
+    <meta name="author" content="Yohann Mepa">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>&#60;&#9829;PekoChan&#9829;&#47;&#62;</title>
     <style>
         @font-face{
@@ -11,9 +16,10 @@
         }
     </style>
     <link rel="icon" href="{{url_for('static', filename='crown.png')}}" />
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/main.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/loader.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='datas/') }}{{css[0]}}">
+    {% assets "css_all" %}
+         <link rel="stylesheet" type="text/css" href="{{ ASSET_URL }}"></script>
+    {% endassets %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/') }}{{css[0]}}">
 </head>
 
 <body>
@@ -52,22 +58,9 @@
 
         </div>
         <div id="scritps">
-            <script type="text/javascript" src='{{ url_for('static',filename='js/three.min.js') }}'></script>
-            <script type='text/javascript' src='{{ url_for('static',filename='js/tween.js') }}'></script>
-            <script type='text/javascript' src='{{ url_for('static',filename='js/loaders/GLTFLoader.js') }}'></script>
-            <script type="text/javascript" src='{{ url_for('static',filename='js/postprocessing/EffectComposer.js') }}'></script>
-            <script type="text/javascript" src='{{ url_for('static',filename='js/postprocessing/RenderPass.js') }}'></script>
-            <script type="text/javascript" src='{{ url_for('static',filename='js/postprocessing/ShaderPass.js') }}'></script>
-            <script type="text/javascript" src='{{ url_for('static',filename='js/postprocessing/GlitchPass.js') }}'></script>
-            <script type="text/javascript" src='{{ url_for('static',filename='js/postprocessing/RGBShiftShader.js') }}'></script>
-            <script type="text/javascript" src='{{ url_for('static',filename='js/postprocessing/DotScreenShader.js') }}'></script>
-            <script type="text/javascript" src='{{ url_for('static',filename='js/postprocessing/CopyShader.js') }}'></script>
-            <script type="text/javascript" src='{{ url_for('static',filename='js/postprocessing/DigitalGlitch.js') }}'></script>
-        
-            <script type="text/javascript" src="{{ url_for('static', filename='sceneDefinition.js') }}"></script>
-            <script type="text/javascript" src="{{ url_for('static', filename='mesh.js') }}"></script>
-            <script type="text/javascript" src="{{ url_for('static', filename='app.js') }}"></script>
-            <script type="text/javascript" src="{{ url_for('static', filename='loader.js') }}"></script>
+            {% assets "js_all" %}
+                <script type="text/javascript" src="{{ ASSET_URL }}"></script>
+            {% endassets %}
         </div>
     </div>
 </body>

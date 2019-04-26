@@ -7,12 +7,14 @@ pip freeze > requirements.txt
 
 TODO:
 =====
+ - [ ] make something for non threejs user
  - [ ] rings around me and add planets
  - [ ] flask assets
+ - [ ] compression
+ - [x] animate the text in the front ~~( make it 3d)~~
+ - [x] put a background for the text,(to make the text readable)
  - [x] remove month if ==0
  - [x] make it virtual env
- - [ ] animate the text in the front( make it 3d)
- - [ ] put a background for the text,(to make the text readable)
  - [x] wings and crown can be animated
 
 
@@ -47,7 +49,6 @@ lib
 ====
 http://animejs.com/  
 http://mojs.io/  
-http://three.js/  
 http://pixi.js  
 
 host
