@@ -7,16 +7,18 @@ pip freeze > requirements.txt
 
 TODO:
 =====
+
+ - [ ] find somehting to bunble and compress with starlette 
+ - [ ] bootstrap
  - [ ] make something for non threejs user
  - [ ] rings around me and add planets
- - [ ] flask assets
- - [ ] compression
+ - [x] flask assets
+ - [x] compression
  - [x] animate the text in the front ~~( make it 3d)~~
  - [x] put a background for the text,(to make the text readable)
  - [x] remove month if ==0
  - [x] make it virtual env
  - [x] wings and crown can be animated
-
 
 GLTF converter  
 https://blackthread.io/gltf-converter/  
@@ -30,6 +32,7 @@ SASS
 update the website
 ==================
 
+`uvicorn main:app`   
 `sudo systemctl stop nginx`
 `top -> killall uwsgi`
 `Git pull`
@@ -38,10 +41,8 @@ update the website
 inspiration
 ===============
 https://kentatoshikura.com/  
-http://findmatthew.com/  
 https://pierre.io/  
 http://www.michaelvillar.com/  
-https://optimo.com/  
 http://slyillustrations.com/  
 https://www.eliwilliamson.com/  
 http://www.drama.xxx/  
