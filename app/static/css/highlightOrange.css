@@ -1,0 +1,6 @@
+a:link, a:visited, a:active, #different {
+  color: #edc514;
+}
+a:hover {
+  color: #a1710a;
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>tree</title>
+</head>
+<body>
+    <canvas id="main"></canvas>
+    <script src="three.min.js"></script>
+    <script src ="ImprovedNoise.js"></script>
+    <script type="x-shader/x-vertex" id="sem-vs">
+        varying vec3 vNormal;
+        
+
+        void main(){
+            vNormal = .5 + .5 * normalMatrix * normal;
+            vec3 pct = vec3(normal.x);
+            gl_Position = projectionMatrix * modelViewMatrix * vec4(position,1.0);
+        }
+    </script>
+    <script type="x-shader/x-vertex" id="sem-fs">
+        varying vec3 vNormal;
+        uniform float time;
+        uniform float resolution;
+
+        float plot (vec2 st, float pct){
+            return  smoothstep( pct-0.4, pct, st.y) -
+                    smoothstep( pct, pct+0.4, st.y);
+          }
+        
+        void main(){
+            vec2 st = gl_FragCoord.xy/resolution.xy;
+            vec3 color = vec3(0.0);
+            vec2 bl = step(vec2(0.1),st);
+            vec3 t2 = vec3(.5,.3,1);
+            vec3 t = vec3(.4,.3,.2);
+            // color = mix(vNormal, t, pct);
+            color = step(0.3,mix(t,t2,plot(vec2(vNormal.x,vNormal.y),abs(sin(pct.r+time)))));
+            gl_FragColor =vec4(color, 1.0);
+        }
+    </script>
+    
+    <script src ="main.js"></script>
+</body>
+</html>
