@@ -11,15 +11,13 @@
     <style>
         @font-face{
             font-family: Leitura;
-            src: url('{{ url_for('static',filename='datas/Leitura_News_Italic_4.otf') }}');
+            src: url('{{ url_for('static',path='datas/Leitura_News_Italic_4.otf') }}');
             font-weight: bold;
         }
     </style>
-    <link rel="icon" href="{{url_for('static', filename='crown.png')}}" />
-    {% assets "css_all" %}
-         <link rel="stylesheet" type="text/css" href="{{ ASSET_URL }}"></script>
-    {% endassets %}
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/') }}{{css[0]}}">
+    <link rel="icon" href="{{url_for('static', path='crown.png')}}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',path='') }}{{ cssBundle }}"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',path='css/') }}{{css[0]}}">
 </head>
 
 <body>
@@ -31,10 +29,10 @@
             <script> 
                 let cssColor = "{{css[1]}}"
                 let randomName = "{{rand}}"
-                let tex = "{{ url_for('static', filename='datas/text_low.jpg') }}"
-                let crown = "{{ url_for('static', filename='datas/crown.glb') }}"
-                let wings = "{{ url_for('static', filename='datas/wings.glb') }}"
-                let peko = "{{ url_for('static', filename='datas/peko.glb') }}"
+                let tex = "{{ url_for('static', path='datas/text_low.jpg') }}"
+                let crown = "{{ url_for('static', path='datas/crown.glb') }}"
+                let wings = "{{ url_for('static', path='datas/wings.glb') }}"
+                let peko = "{{ url_for('static', path='datas/peko.glb') }}"
             </script>
         </canvas>
         <div id='top' class='blackBG'>
@@ -55,12 +53,9 @@
             <h2 id='now2'>Now doing mostly <span id="different">Python/Flask</span>, <span id="different">Js/Threejs</span>, <span id="different">C#/Unity</span>.</h2>
             <h3 id='and'> And I used to work for<span id="different">Augment</span>, <span id="different">Addsome</span>, <span id="different">Fixstudio</span>, processing datas with python moslty.</h3>
             <h2 id='contact'>  ==><a href="mailto:yoyo.mepa@gmail.com?Subject=Hello from the website" target="_top"> contact me </a> <== </h2>
-
         </div>
         <div id="scritps">
-            {% assets "js_all" %}
-                <script type="text/javascript" src="{{ ASSET_URL }}"></script>
-            {% endassets %}
+            <script type="text/javascript" src="{{ url_for('static',path='') }}{{ jsonBundle }}"></script>
         </div>
     </div>
 </body>
