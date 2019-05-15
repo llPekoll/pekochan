@@ -8,11 +8,11 @@ pip freeze > requirements.txt
 TODO:
 =====
 
- - [ ] find somehting to bunble and compress with starlette 
+ - [ ] compress => Gzip 
  - [ ] bootstrap
- - [ ] make something for non threejs user
+ - [ ] make something for non threejs user like mobile
  - [ ] rings around me and add planets
- - [x] flask assets
+ - [x] assets bundle
  - [x] compression
  - [x] animate the text in the front ~~( make it 3d)~~
  - [x] put a background for the text,(to make the text readable)
