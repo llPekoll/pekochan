@@ -20,8 +20,7 @@ TODO:
  - [x] make it virtual env
  - [x] wings and crown can be animated
 
-GLTF converter  
-https://blackthread.io/gltf-converter/  
+
 
 
 SASS
@@ -47,34 +46,21 @@ http://slyillustrations.com/
 https://www.eliwilliamson.com/  
 http://www.drama.xxx/  
 http://www.larsberg.net/#/thumpThump  
-https://stemkoski.github.io/Three.js/  
-https://threejs.org/examples/#webgl_shaders_vector  
 https://codepen.io/scorch/pen/xdGPVa  
 https://vincentgarreau.com/particles.js/  
+http://juliangarnier.com/
 
 lib 
 ====
 http://animejs.com/  
-http://mojs.io/  
-http://pixi.js  
-
-host
-====
-https://www.pythonanywhere.com/forums/topic/1496/
-https://codemyui.com/tag/social-icon/
-http://juliangarnier.com/
-https://codemyui.com/blog-post-card-ui/
-https://codemyui.com/gooey-sidebar-stretch-menu-concept/
-https://codemyui.com/blurry-loading-quote-animation-effect/
 
 utils
 =====
-font converterto Json.
-https://gero3.github.io/facetype.js/
+GLTF converter  
+https://blackthread.io/gltf-converter/  
 
 server Ubuntu 18.04
 ===============
-
 
 configuration
 https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications-with-uswgi-and-nginx-on-ubuntu-18-04
