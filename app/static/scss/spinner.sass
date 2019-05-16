@@ -1,0 +1,62 @@
+// spinner
+
+
+
+#overlay-spin
+    // height: 100%
+    // width: 100%
+    // background: #453e38
+    // position: fixed
+    // left: 0
+    // top: 0
+    display: flex
+    z-index: 3
+
+.pp
+    z-index: 100
+    width: 1px
+    height: 100%
+.left-side
+    z-index: 0
+    position: fixed
+    left: -800px
+    top: -60px
+    width: 200%
+    height: 100%
+    transform: rotate(-45deg)
+    background-color: blue
+.right-side
+    z-index: 0
+    position: fixed
+    left: 0
+    top: 0
+    width: 200%
+    height: 100%
+    transform: skewY(-45deg)
+    background-color: red
+
+.lds-dual-ring
+    z-index: 3
+    margin-top: 40%
+    display: inline-block
+    width: 64px
+    height: 64px
+
+.lds-dual-ring:after 
+    z-index: 3
+    content: " "
+    display: block
+    width: 46px
+    height: 46px
+    margin: 1px
+    border-radius: 50%
+    border: 5px solid #fff
+    border-color: #fff transparent #fff transparent
+    animation: lds-dual-ring 1.2s linear infinite
+
+@keyframes lds-dual-ring 
+    0% 
+        transform: rotate(0deg)
+
+    100% 
+        transform: rotate(360deg)

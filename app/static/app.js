@@ -48,3 +48,23 @@ function render() {
         mixer.update(clock.getDelta());
     };
 };
+
+function spinnerAnimation() 
+{
+        document.querySelector( '.pp' ).innerHTML = Math.round(meshLoaded / 4) + "&#37;";
+        console.log(meshLoaded);
+        
+    }
+
+var t=setInterval(runFunction,0.01);
+
+function runFunction(){
+    spinnerAnimation()
+    if (pekoIsLoaded && wingsIsLoaded && crownIsLoaded)
+    {
+        var overlay = document.querySelector("#overlay-spin");
+        overlay.style.display = 'none';
+        console.log(" ==> page loaded");
+        clearInterval(t);
+    };
+};

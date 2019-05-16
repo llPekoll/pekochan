@@ -24,7 +24,7 @@ canvas {
 
 .blackBG {
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
 #top {
@@ -39,6 +39,7 @@ canvas {
   padding-top: 2%;
   padding-left: 4%;
   padding-bottom: 0.5%;
+  z-index: -2;
 }
 #about h2 {
   font-size: 90%;
@@ -46,130 +47,154 @@ canvas {
 }
 #about h3 {
   margin-left: 30px;
-  margin-top: -20px;
+  margin-top: -10px;
   font-size: 63%;
 }
 
 #title {
   padding-top: 1%;
   padding-right: 3%;
-  left: -200%;
+  left: -50%;
   position: relative;
+  opacity: 0;
 }
 
 #myName, #iUse, #now, #for, #iUse2, #unity, #now2, #and, #contact {
   position: relative;
-  left: 100%;
+  left: 50%;
+  opacity: 0;
 }
 
 #title.translate {
-  -webkit-transition: 2s;
-  -moz-transition: 2s;
-  -ms-transition: 2s;
-  -o-transition: 2s;
-  transition: 2s;
+  -webkit-transition: 1.5s;
+  -webkit-animation: example 1.5s forwards 0s;
+  -moz-transition: 1.5s;
+  -ms-transition: 1.5s;
+  -o-transition: 1.5s;
+  transition: 1.5s;
   transition-timing-function: cubic-bezier(0, 0, 0, 1);
   transition-delay: 0s;
   left: 0;
 }
 
 #myName.translate {
-  -webkit-transition: 2s;
-  -moz-transition: 2s;
-  -ms-transition: 2s;
-  -o-transition: 2s;
-  transition: 2s;
+  -webkit-transition: 1.5s;
+  -webkit-animation: example 1.5s forwards 0.5s;
+  -moz-transition: 1.5s;
+  -ms-transition: 1.5s;
+  -o-transition: 1.5s;
+  transition: 1.5s;
+  transition-timing-function: cubic-bezier(0, 0, 0, 1);
+  transition-delay: 0.5s;
+  left: 0;
+}
+
+#iUse.translate {
+  -webkit-transition: 1.5s;
+  -webkit-animation: example 1.5s forwards 0.6s;
+  -moz-transition: 1.5s;
+  -ms-transition: 1.5s;
+  -o-transition: 1.5s;
+  transition: 1.5s;
+  transition-timing-function: cubic-bezier(0, 0, 0, 1);
+  transition-delay: 0.6s;
+  left: 0;
+}
+
+#now.translate {
+  -webkit-transition: 1.5s;
+  -webkit-animation: example 1.5s forwards 0.9s;
+  -moz-transition: 1.5s;
+  -ms-transition: 1.5s;
+  -o-transition: 1.5s;
+  transition: 1.5s;
+  transition-timing-function: cubic-bezier(0, 0, 0, 1);
+  transition-delay: 0.9s;
+  left: 0;
+}
+
+#for.translate {
+  -webkit-transition: 1.5s;
+  -webkit-animation: example 1.5s forwards 1s;
+  -moz-transition: 1.5s;
+  -ms-transition: 1.5s;
+  -o-transition: 1.5s;
+  transition: 1.5s;
+  transition-timing-function: cubic-bezier(0, 0, 0, 1);
+  transition-delay: 1s;
+  left: 0;
+}
+
+#iUse2.translate {
+  -webkit-transition: 1.5s;
+  -webkit-animation: example 1.5s forwards 1.2s;
+  -moz-transition: 1.5s;
+  -ms-transition: 1.5s;
+  -o-transition: 1.5s;
+  transition: 1.5s;
+  transition-timing-function: cubic-bezier(0, 0, 0, 1);
+  transition-delay: 1.2s;
+  left: 0;
+}
+
+#unity.translate {
+  -webkit-transition: 1.5s;
+  -webkit-animation: example 1.5s forwards 1.3s;
+  -moz-transition: 1.5s;
+  -ms-transition: 1.5s;
+  -o-transition: 1.5s;
+  transition: 1.5s;
+  transition-timing-function: cubic-bezier(0, 0, 0, 1);
+  transition-delay: 1.3s;
+  left: 0;
+}
+
+#now2.translate {
+  -webkit-transition: 1.5s;
+  -webkit-animation: example 1.5s forwards 1.5s;
+  -moz-transition: 1.5s;
+  -ms-transition: 1.5s;
+  -o-transition: 1.5s;
+  transition: 1.5s;
   transition-timing-function: cubic-bezier(0, 0, 0, 1);
   transition-delay: 1.5s;
   left: 0;
 }
 
-#iUse.translate {
-  -webkit-transition: 2s;
-  -moz-transition: 2s;
-  -ms-transition: 2s;
-  -o-transition: 2s;
-  transition: 2s;
+#and.translate {
+  -webkit-transition: 1.5s;
+  -webkit-animation: example 1.5s forwards 1.6s;
+  -moz-transition: 1.5s;
+  -ms-transition: 1.5s;
+  -o-transition: 1.5s;
+  transition: 1.5s;
   transition-timing-function: cubic-bezier(0, 0, 0, 1);
   transition-delay: 1.6s;
   left: 0;
 }
 
-#now.translate {
-  -webkit-transition: 2s;
-  -moz-transition: 2s;
-  -ms-transition: 2s;
-  -o-transition: 2s;
-  transition: 2s;
-  transition-timing-function: cubic-bezier(0, 0, 0, 1);
-  transition-delay: 1.9s;
-  left: 0;
-}
-
-#for.translate {
-  -webkit-transition: 2s;
-  -moz-transition: 2s;
-  -ms-transition: 2s;
-  -o-transition: 2s;
-  transition: 2s;
-  transition-timing-function: cubic-bezier(0, 0, 0, 1);
-  transition-delay: 2s;
-  left: 0;
-}
-
-#iUse2.translate {
-  -webkit-transition: 2s;
-  -moz-transition: 2s;
-  -ms-transition: 2s;
-  -o-transition: 2s;
-  transition: 2s;
-  transition-timing-function: cubic-bezier(0, 0, 0, 1);
-  transition-delay: 2.2s;
-  left: 0;
-}
-
-#unity.translate {
-  -webkit-transition: 2s;
-  -moz-transition: 2s;
-  -ms-transition: 2s;
-  -o-transition: 2s;
-  transition: 2s;
-  transition-timing-function: cubic-bezier(0, 0, 0, 1);
-  transition-delay: 2.3s;
-  left: 0;
-}
-
-#now2.translate {
-  -webkit-transition: 2s;
-  -moz-transition: 2s;
-  -ms-transition: 2s;
-  -o-transition: 2s;
-  transition: 2s;
-  transition-timing-function: cubic-bezier(0, 0, 0, 1);
-  transition-delay: 2.5s;
-  left: 0;
-}
-
-#and.translate {
-  -webkit-transition: 2s;
-  -moz-transition: 2s;
-  -ms-transition: 2s;
-  -o-transition: 2s;
-  transition: 2s;
-  transition-timing-function: cubic-bezier(0, 0, 0, 1);
-  transition-delay: 2.6s;
-  left: 0;
-}
-
 #contact.translate {
-  -webkit-transition: 2s;
-  -moz-transition: 2s;
-  -ms-transition: 2s;
-  -o-transition: 2s;
-  transition: 2s;
+  -webkit-transition: 1.5s;
+  -webkit-animation: example 1.5s forwards 1.8s;
+  -moz-transition: 1.5s;
+  -ms-transition: 1.5s;
+  -o-transition: 1.5s;
+  transition: 1.5s;
   transition-timing-function: cubic-bezier(0, 0, 0, 1);
-  transition-delay: 2.8s;
+  transition-delay: 1.8s;
   left: 0;
+}
+
+@keyframes example {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

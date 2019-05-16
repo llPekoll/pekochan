@@ -8,20 +8,7 @@ pekoMat.name = "pekomat";
 var pekoIsLoaded = false;
 var wingsIsLoaded = false;
 var crownIsLoaded = false;
-
-var t=setInterval(runFunction,100);
-
-function runFunction(){
-    // console.log("jose");
-    if (pekoIsLoaded && wingsIsLoaded && crownIsLoaded)
-    {
-        var overlay = document.getElementById("overlay");
-        overlay.style.display = 'none';
-        console.log(" ==> page loaded");
-        clearInterval(t);
-    };
-};
-
+var meshLoaded = 0;
 loader.load( peko,
 	function ( gltf ) {
         gltf.scene.children[0].name = "peko";
@@ -32,11 +19,31 @@ loader.load( peko,
 	function ( xhr ) {
         if ( xhr.loaded / xhr.total >=1){
             pekoIsLoaded = true;
-            // console.log("peko is Loaded");
+            updateMeshCounter(xhr.loaded , xhr.total);
         };
         // console.log( "peko" +( xhr.loaded / xhr.total * 100 ) + '% loaded' );
         },
 	function ( error ) { console.log( 'An error happened' );}
+);
+
+loader.load( ring,
+	function ( gltf ) {
+        gltf.scene.children[0].name = "ring";
+        scene.add( gltf.scene );
+        gltf.scene.children[0].scale.set(575,575,575);
+        gltf.scene.children[2].scale.set(500,500,500);
+        gltf.scene.children[1].scale.set(710,710,710);
+        gltf.scene.children[0].position.y = -50;
+        gltf.scene.children[1].position.y = -50;
+        gltf.scene.children[2].position.y = -50;
+	},
+	function ( xhr ) { 
+        if ( xhr.loaded / xhr.total >=1){
+            crownIsLoaded = true;
+            updateMeshCounter(xhr.loaded , xhr.total);
+        };
+    },
+	function ( error ) { console.log( 'An error happened' ); }
 );
 
 loader.load( crown,
@@ -48,7 +55,7 @@ loader.load( crown,
 	function ( xhr ) { 
         if ( xhr.loaded / xhr.total >=1){
             crownIsLoaded = true;
-            // console.log("crown is Loaded");
+            updateMeshCounter(xhr.loaded , xhr.total);
         };
     },
 	function ( error ) { console.log( 'An error happened' ); }
@@ -65,8 +72,8 @@ loader.load( wings,
 	},
 	function ( xhr ) { 
         if ( xhr.loaded / xhr.total >=1){
+            updateMeshCounter(xhr.loaded , xhr.total);
             wingsIsLoaded = true;
-            // console.log("wings are Loaded");
         };
     },
 	function ( error ) { console.log( 'An error happened' );}
@@ -124,3 +131,8 @@ function animateStars() {
     };
 };
 addSphere();
+
+function updateMeshCounter(toadd, toaddTotal)
+{
+    meshLoaded += toadd / toaddTotal * 100 
+}
