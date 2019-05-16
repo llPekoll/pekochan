@@ -1,17 +1,18 @@
 My website
 ==========
 
-work on my personal website  
+Personal Website  
 
 pip freeze > requirements.txt
 
 TODO:
 =====
 
- - [ ] compress => Gzip 
- - [ ] bootstrap
+ - [ ] compress => Gzip  uzing Nginx
  - [ ] make something for non threejs user like mobile
- - [ ] rings around me and add planets
+ - [x] animation opening
+ - [x] bootstrap
+ - [x] rings around me and add planets
  - [x] assets bundle
  - [x] compression
  - [x] animate the text in the front ~~( make it 3d)~~
@@ -19,8 +20,6 @@ TODO:
  - [x] remove month if ==0
  - [x] make it virtual env
  - [x] wings and crown can be animated
-
-
 
 
 SASS

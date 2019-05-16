@@ -1,0 +1,91 @@
+#overlay-spin {
+  opacity: 1;
+  display: flex;
+  z-index: 3;
+}
+
+.pp {
+  z-index: 4;
+  position: fixed;
+  top: 62%;
+  left: 20%;
+  color: #cccbc0;
+}
+
+.left-side {
+  z-index: 0;
+  position: fixed;
+  left: -170%;
+  top: 0%;
+  width: 300%;
+  height: 300%;
+  transform: skew(45deg);
+  background-color: #353535;
+}
+
+.right-side {
+  z-index: 0;
+  position: fixed;
+  left: 110%;
+  top: 0;
+  width: 300%;
+  height: 300%;
+  transform: skew(45deg);
+  background-color: #606060;
+}
+
+.multi-ripple {
+  position: fixed;
+  width: 6rem;
+  height: 6rem;
+  top: 60%;
+  left: 15%;
+}
+.multi-ripple div {
+  position: absolute;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  border: 0.3rem solid #cccbc0;
+  animation: 1.5s ripple infinite;
+}
+.multi-ripple div:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+@keyframes ripple {
+  from {
+    transform: scale(0);
+    opacity: 1;
+  }
+  to {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+@keyframes openCurtainLeft {
+  from {
+    left: -170%;
+  }
+  to {
+    left: -300%;
+  }
+}
+@keyframes openCurtainRight {
+  from {
+    left: 110%;
+  }
+  to {
+    left: 250%;
+  }
+}
+@keyframes transparency {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/*# sourceMappingURL=spinner.css.map */

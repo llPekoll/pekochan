@@ -1,9 +1,8 @@
-var renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('background'), alpha: true, antialias: true });
+var renderer = new THREE.WebGLRenderer({ canvas: document.querySelector('#bg-3d'), alpha: true, antialias: true });
 renderer.autoClear = false;
 const winX = window.innerWidth;
 const winY = window.innerHeight;
 renderer.setSize( winX,  winY );
-
 var mixer;
 var loader = new THREE.GLTFLoader();
 var clock = new THREE.Clock();

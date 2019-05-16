@@ -1,5 +1,5 @@
 import os
-from random import randint
+from random import choice
 
 import content as ct
 
@@ -31,21 +31,18 @@ js = Bundle('js/tween.js',
             'app.js',
             filters='jsmin', output='gen/packed.js')
 my_env.register('js_all', js)
-css = Bundle('css/main.css','css/loader.css',filters='cssmin',output='gen/packed.css')
+css = Bundle('css/main.css','css/spinner.css',filters='cssmin',output='gen/packed.css')
 my_env.register('css_all', css)
 
 @app.route('/')
 async def homepage(request):
-
-    rand_name = randint(0, len(ct.rand_name)-1)
-    rand_css = randint(0, len(ct.csss)-1)
     years, months = ct.get_python_time()
     context = {"request": request,
-                "rand":ct.rand_name[rand_name],
+                "rand":choice(ct.rand_name),
                 "cssBundle":my_env['css_all'].urls()[0],
                 "jsonBundle":my_env['js_all'].urls()[0],
                 "years":years,
-                "css":ct.csss[rand_css],
+                "css":choice(ct.csss),
                 "months":months
                 }
     return templates.TemplateResponse('index.html',context)
@@ -57,6 +54,3 @@ async def sakulu(request):
 
 if __name__ == '__main__':
     uvicorn.run(app, host='0.0.0.0', port=8000)
-
-# from flask_compress import Compress
-# Compress(app)

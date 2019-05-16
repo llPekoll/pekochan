@@ -21,7 +21,7 @@ canvas
 
 .blackBG
     width: 100%
-    background-color: rgba(0, 0, 0, 0.5)
+    background-color: rgba(0, 0, 0, 0.9)
 
 #top
     text-align: right
@@ -34,6 +34,7 @@ canvas
     padding-top: 2%
     padding-left: 4%
     padding-bottom: 0.5%
+    z-index: -2
 
     h2
         font-size: 90%
@@ -41,15 +42,16 @@ canvas
 
     h3
         margin-left: 30px
-        margin-top: -20px
+        margin-top: -10px
         font-size: 63%
 
 = transition($transitionTime) 
-    -webkit-transition: 2s
-    -moz-transition: 2s
-    -ms-transition: 2s
-    -o-transition: 2s
-    transition: 2s
+    -webkit-transition: 1.5s
+    -webkit-animation: example 1.5s forwards $transitionTime
+    -moz-transition: 1.5s
+    -ms-transition: 1.5s
+    -o-transition: 1.5s
+    transition: 1.5s
     transition-timing-function: cubic-bezier(0, 0, 0, 1)
     transition-delay: $transitionTime
     left: 0
@@ -57,41 +59,51 @@ canvas
 // =====> Animation
 
 #title
-    padding-top: 1%
+    padding-top: 0.5%
     padding-right: 3%
-    left: - 200%
+    left: - 50%
     position: relative
+    opacity: 0
 
 #myName,#iUse,#now,#for,#iUse2,#unity,#now2,#and,#contact
     position: relative
-    left: 100%
+    left: 50%
+    opacity: 0
 
 #title.translate
     +transition(0s)
 
 #myName.translate
-    +transition(1.5s)
+    +transition(0.5s)
 
 #iUse.translate 
-    +transition(1.6s)
+    +transition(0.6s)
 
 #now.translate
-    +transition(1.9s)
+    +transition(0.9s)
 
 #for.translate 
-    +transition(2s)
+    +transition(1s)
 
 #iUse2.translate 
-    +transition(2.2s)
+    +transition(1.2s)
 
 #unity.translate 
-    +transition(2.3s)
+    +transition(1.3s)
 
 #now2.translate
-    +transition(2.5s)
+    +transition(1.5s)
 
 #and.translate 
-    +transition(2.6s)
+    +transition(1.6s)
 
 #contact.translate 
-    +transition(2.8s)
+    +transition(1.8s)
+
+@keyframes example 
+    0% 
+        opacity: 0
+    50%
+        opacity: 0
+    100% 
+        opacity: 1

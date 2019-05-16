@@ -47,4 +47,66 @@ function render() {
     if(mixer){
         mixer.update(clock.getDelta());
     };
+
+    document.querySelector( '.pp' ).innerHTML = meshLoaded / 4 + "&#37;";
+};
+
+var i=0;
+var t=setInterval(runFunction,0.01);
+function runFunction()
+{
+    i +=1;
+    if (pekoIsLoaded && wingsIsLoaded && crownIsLoaded)
+    {
+        if (i==150)
+        {
+            textAnimation();
+            clearInterval(t);
+        }
+        document.querySelector('.multi-ripple ').style.animation = '1.5s transparency forwards'
+        document.querySelector('.pp ').style.animation = '1.5s transparency forwards'
+    };
+};
+
+window.onload = function () { 
+
+    spinnerHandler();
+    var crown = scene.getObjectByName( "crown" );
+    crown.material = basicMat;
+    var position = {y: 40};
+    var target = {y: 55};
+    var tween = new TWEEN.Tween(position).to(target, 1500).yoyo( true ).repeat( Infinity );
+    
+    tween.onUpdate(function(){
+        crown.position.x = 5;
+        crown.position.y = position.y;
+        crown.position.z = 10;
+        crown.rotation.y +=1/100;
+    });
+    tween.start();
+};
+
+function textAnimation() {
+    
+    var textList = ['title','myName','iUse','now','for','iUse2','unity','now2','and','contact'];
+    
+    for (var i = 0; i < textList.length; i++) {
+        var elt = document.getElementById(textList[i]);
+        elt.classList.add('translate');
+    };
+    document.querySelector('.left-side').style.animation = '1.5s openCurtainLeft forwards'
+    document.querySelector('.right-side').style.animation = '1.5s openCurtainRight forwards'
+};
+
+var toDesapear = [];
+function spinnerHandler()
+{
+    toDesapear.push(document.querySelector(".pp"));
+    toDesapear.push(document.querySelector(".multi-ripple"));
+    console.log(toDesapear);
+    toDesapear.forEach
+    for (elt of toDesapear) {
+        elt.style.opacity = 1;
+        console.log(elt);
+    };
 };
