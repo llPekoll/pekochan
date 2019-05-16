@@ -31,7 +31,7 @@ js = Bundle('js/tween.js',
             'app.js',
             filters='jsmin', output='gen/packed.js')
 my_env.register('js_all', js)
-css = Bundle('css/main.css','css/loader.css',filters='cssmin',output='gen/packed.css')
+css = Bundle('css/main.css','css/spinner.css',filters='cssmin',output='gen/packed.css')
 my_env.register('css_all', css)
 
 @app.route('/')

@@ -15,30 +15,29 @@
             font-weight: bold;
         }
     </style>
-    <link rel="icon" href="{{url_for('static', path='crown.png')}}" />
+    <link rel="icon" href="{{url_for('static', path='crown.png')}}"/>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static',path='') }}{{ cssBundle }}"></script>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static',path='css/') }}{{css[0]}}">
 </head>
 
 <body>
-    <div id="overlay">
-        <div id="spinner"></div>
-    </div>
+    {% include "spinner.html" %}
     <div id="container">		
-        <canvas id='background'>
+        <canvas id="bg-3d">
             <script> 
-                let cssColor = "{{css[1]}}"
-                let randomName = "{{rand}}"
-                let tex = "{{ url_for('static', path='datas/text_low.jpg') }}"
-                let crown = "{{ url_for('static', path='datas/crown.glb') }}"
-                let wings = "{{ url_for('static', path='datas/wings.glb') }}"
-                let peko = "{{ url_for('static', path='datas/peko.glb') }}"
+                let cssColor    = "{{ css[1] }}"
+                let randomName  = "{{ rand }}"
+                let tex         = "{{ url_for('static', path='datas/text_low.jpg') }}"
+                let crown       = "{{ url_for('static', path='datas/crown.glb') }}"
+                let wings       = "{{ url_for('static', path='datas/wings.glb') }}"
+                let peko        = "{{ url_for('static', path='datas/peko.glb') }}"
+                let ring        = "{{ url_for('static', path='datas/ring.glb') }}"
             </script>
         </canvas>
         <div id='top' class='blackBG'>
-            <h1 id="title" >Hello,  <span id="different">{{rand}}</span></h1>
+            <h1 id="title" >Hello, <span id="different">{{ rand }}</span></h1>
         </div>
-    
         <div id='about' class='blackBG'>
             <h2 id='myName'>My name is <span id="different">Yohann Mepa</span>,</h2> 
             <h3 id='iUse'>I used to do some 2d/3d animation.</h3>
@@ -55,6 +54,8 @@
             <h2 id='contact'>  ==><a href="mailto:yoyo.mepa@gmail.com?Subject=Hello from the website" target="_top"> contact me </a> <== </h2>
         </div>
         <div id="scritps">
+            <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+            <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
             <script type="text/javascript" src="{{ url_for('static',path='') }}{{ jsonBundle }}"></script>
         </div>
     </div>

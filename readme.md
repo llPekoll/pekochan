@@ -11,7 +11,7 @@ TODO:
  - [ ] compress => Gzip 
  - [ ] bootstrap
  - [ ] make something for non threejs user like mobile
- - [ ] rings around me and add planets
+ - [x] rings around me and add planets
  - [x] assets bundle
  - [x] compression
  - [x] animate the text in the front ~~( make it 3d)~~
