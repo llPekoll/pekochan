@@ -10,8 +10,11 @@ TODO:
 
  - [ ] compress => Gzip  uzing Nginx
  - [ ] make something for non threejs user like mobile
+<<<<<<< HEAD
  - [x] animation opening
  - [x] bootstrap
+=======
+>>>>>>> 2f577d04062982f2e8b231cac58906e82187f062
  - [x] rings around me and add planets
  - [x] assets bundle
  - [x] compression
