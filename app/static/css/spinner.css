@@ -1,50 +1,23 @@
 #overlay-spin {
-<<<<<<< HEAD
   opacity: 1;
-=======
->>>>>>> 2f577d04062982f2e8b231cac58906e82187f062
   display: flex;
   z-index: 3;
-}
-
-.pp {
-<<<<<<< HEAD
-  z-index: 4;
-  position: fixed;
-  top: 62%;
-  left: 20%;
-  color: #cccbc0;
-=======
-  z-index: 100;
-  width: 1px;
-  height: 100%;
->>>>>>> 2f577d04062982f2e8b231cac58906e82187f062
 }
 
 .left-side {
   z-index: 0;
   position: fixed;
-<<<<<<< HEAD
   left: -170%;
   top: 0%;
   width: 300%;
   height: 300%;
   transform: skew(45deg);
   background-color: #353535;
-=======
-  left: -800px;
-  top: -60px;
-  width: 200%;
-  height: 100%;
-  transform: rotate(-45deg);
-  background-color: blue;
->>>>>>> 2f577d04062982f2e8b231cac58906e82187f062
 }
 
 .right-side {
   z-index: 0;
   position: fixed;
-<<<<<<< HEAD
   left: 110%;
   top: 0;
   width: 300%;
@@ -53,12 +26,20 @@
   background-color: #606060;
 }
 
+.pp {
+  z-index: 4;
+  position: fixed;
+  top: 62%;
+  left: 11rem;
+  color: #cccbc0;
+}
+
 .multi-ripple {
   position: fixed;
   width: 6rem;
   height: 6rem;
   top: 60%;
-  left: 15%;
+  left: 6rem;
 }
 .multi-ripple div {
   position: absolute;
@@ -95,7 +76,7 @@
     left: 110%;
   }
   to {
-    left: 250%;
+    left: 350%;
   }
 }
 @keyframes transparency {
@@ -104,43 +85,6 @@
   }
   to {
     opacity: 0;
-=======
-  left: 0;
-  top: 0;
-  width: 200%;
-  height: 100%;
-  transform: skewY(-45deg);
-  background-color: red;
-}
-
-.lds-dual-ring {
-  z-index: 3;
-  margin-top: 40%;
-  display: inline-block;
-  width: 64px;
-  height: 64px;
-}
-
-.lds-dual-ring:after {
-  z-index: 3;
-  content: " ";
-  display: block;
-  width: 46px;
-  height: 46px;
-  margin: 1px;
-  border-radius: 50%;
-  border: 5px solid #fff;
-  border-color: #fff transparent #fff transparent;
-  animation: lds-dual-ring 1.2s linear infinite;
-}
-
-@keyframes lds-dual-ring {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
->>>>>>> 2f577d04062982f2e8b231cac58906e82187f062
   }
 }
 

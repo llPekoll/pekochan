@@ -47,7 +47,6 @@ function render() {
     if(mixer){
         mixer.update(clock.getDelta());
     };
-<<<<<<< HEAD
 
     document.querySelector( '.pp' ).innerHTML = meshLoaded / 4 + "&#37;";
 };
@@ -109,26 +108,5 @@ function spinnerHandler()
     for (elt of toDesapear) {
         elt.style.opacity = 1;
         console.log(elt);
-=======
-};
-
-function spinnerAnimation() 
-{
-        document.querySelector( '.pp' ).innerHTML = Math.round(meshLoaded / 4) + "&#37;";
-        console.log(meshLoaded);
-        
-    }
-
-var t=setInterval(runFunction,0.01);
-
-function runFunction(){
-    spinnerAnimation()
-    if (pekoIsLoaded && wingsIsLoaded && crownIsLoaded)
-    {
-        var overlay = document.querySelector("#overlay-spin");
-        overlay.style.display = 'none';
-        console.log(" ==> page loaded");
-        clearInterval(t);
->>>>>>> 2f577d04062982f2e8b231cac58906e82187f062
     };
 };
