@@ -31,10 +31,10 @@ update the website
 ==================
 
 `uvicorn main:app`   
-`sudo systemctl stop nginx`
-`top -> killall uvicorn`
-`Git pull`
-`sudo systemctl start nginx`
+`sudo systemctl stop nginx`  
+`top -> killall uvicorn`  
+`Git pull`  
+`sudo systemctl start nginx`  
 
 local docker test
 `docker build -t image1 .`  
