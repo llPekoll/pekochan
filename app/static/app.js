@@ -103,9 +103,7 @@ function spinnerHandler()
 {
     toDesapear.push(document.querySelector(".pp"));
     toDesapear.push(document.querySelector(".multi-ripple"));
-    console.log(toDesapear);
     for (elt of toDesapear) {
         elt.style.opacity = 1;
-        console.log(elt);
     };
 };

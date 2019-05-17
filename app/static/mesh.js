@@ -108,4 +108,4 @@ addSphere();
 function updateMeshCounter(toadd, toaddTotal)
 {
     meshLoaded += toadd / toaddTotal * 100 
-}
+};

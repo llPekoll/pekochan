@@ -26,12 +26,18 @@ js = Bundle('js/tween.js',
             'js/postprocessing/DotScreenShader.js',
             'js/postprocessing/CopyShader.js',
             'js/postprocessing/DigitalGlitch.js',
+            # 'js/jquery.min.js',
+            # 'js/bootstrap.min.js',
             'sceneDefinition.js',
             'mesh.js',
             'app.js',
             filters='jsmin', output='gen/packed.js')
 my_env.register('js_all', js)
-css = Bundle('css/main.css','css/spinner.css',filters='cssmin',output='gen/packed.css')
+css = Bundle('css/main.css',
+            'css/spinner.css',
+            # 'css/bootstrap.min.css',
+            filters='cssmin',
+            output='gen/packed.css')
 my_env.register('css_all', css)
 
 @app.route('/')
