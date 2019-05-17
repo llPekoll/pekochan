@@ -36,6 +36,8 @@ update the website
 `Git pull`  
 `sudo systemctl start nginx`  
 
+`sudo certbot --nginx`
+
 local docker test
 `docker build -t image1 .`  
 `docker run --name myimage1 -d -p 8080:80 image1`  
