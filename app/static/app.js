@@ -62,7 +62,7 @@ function runFunction()
         {
             textAnimation();
             clearInterval(t);
-        }
+        };
         document.querySelector('.multi-ripple ').style.animation = '1.5s transparency forwards'
         document.querySelector('.pp ').style.animation = '1.5s transparency forwards'
     };
@@ -94,8 +94,8 @@ function textAnimation() {
         var elt = document.getElementById(textList[i]);
         elt.classList.add('translate');
     };
-    document.querySelector('.left-side').style.animation = '1.5s openCurtainLeft forwards'
-    document.querySelector('.right-side').style.animation = '1.5s openCurtainRight forwards'
+    document.querySelector('.left-side').style.animation = '1.5s openCurtainLeft forwards';
+    document.querySelector('.right-side').style.animation = '1.5s openCurtainRight forwards';
 };
 
 var toDesapear = [];
@@ -104,7 +104,6 @@ function spinnerHandler()
     toDesapear.push(document.querySelector(".pp"));
     toDesapear.push(document.querySelector(".multi-ripple"));
     console.log(toDesapear);
-    toDesapear.forEach
     for (elt of toDesapear) {
         elt.style.opacity = 1;
         console.log(elt);

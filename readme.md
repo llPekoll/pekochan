@@ -10,11 +10,8 @@ TODO:
 
  - [ ] compress => Gzip  uzing Nginx
  - [ ] make something for non threejs user like mobile
-<<<<<<< HEAD
  - [x] animation opening
  - [x] bootstrap
-=======
->>>>>>> 2f577d04062982f2e8b231cac58906e82187f062
  - [x] rings around me and add planets
  - [x] assets bundle
  - [x] compression
@@ -35,9 +32,13 @@ update the website
 
 `uvicorn main:app`   
 `sudo systemctl stop nginx`
-`top -> killall uwsgi`
+`top -> killall uvicorn`
 `Git pull`
 `sudo systemctl start nginx`
+
+local docker test
+`docker build -t image1 .`  
+`docker run --name myimage1 -d -p 8080:80 image1`  
 
 inspiration
 ===============
