@@ -3,7 +3,6 @@ from collections import namedtuple
 
 
 def get_python_time():
-    
     now = datetime.now()
     Day = namedtuple('Day','year month')
     pday = Day(2016,4)
